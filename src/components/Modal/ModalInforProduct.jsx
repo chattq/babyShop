@@ -10,6 +10,7 @@ import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import { addToCart } from "../../features/counter/counterSlice";
 import { formatMoney } from "../../others/formatMoney";
+import ModalSize from "./ModalSize";
 
 export default function ModalInforProduct({ children, data }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -95,12 +96,12 @@ export default function ModalInforProduct({ children, data }) {
               </ul>
               <p className="text-[16px] text-[#6a717c]">{data.material}</p>
               <div className="text-[#ebc989] mt-5 text-[20px]">
-                <span>
-                  <FontAwesomeIcon icon={faRulerCombined} />
-                </span>
-                <span className="text-[18px] ml-3">Sizes chart</span>
-                {/* <ModalSize>
-              </ModalSize> */}
+                <ModalSize>
+                  <span>
+                    <FontAwesomeIcon icon={faRulerCombined} />
+                  </span>
+                  <span className="text-[18px] ml-3">Sizes chart</span>
+                </ModalSize>
               </div>
               <div className="flex items-center mt-6">
                 <div className="font-semibold mr-[70px]">Color</div>
