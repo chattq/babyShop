@@ -55,6 +55,7 @@ export default function ProductSales({ dataProduct, checkGPS }) {
   const handleProductDetail = (item) => {
     dispatch(getProduct(item));
     setProductToLS(item);
+    window.location.href = "/productDetail";
   };
   return (
     <div className="mt-[50px] home_sale_container">
@@ -76,13 +77,13 @@ export default function ProductSales({ dataProduct, checkGPS }) {
                       />
                     </Link>
                   ) : (
-                    <a onClick={() => handleProductDetail(item)} href="">
+                    <div onClick={() => handleProductDetail(item)} href="">
                       <img
                         src={item.imageMain}
                         alt=""
                         className="w-[100%] h-[100%] "
                       />
-                    </a>
+                    </div>
                   )}
 
                   <div className="card_home_nav text-black px-6 flex items-center justify-between overflow-hidden">
