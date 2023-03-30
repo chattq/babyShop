@@ -24,10 +24,12 @@ export default function ProductInfor() {
   const dataLocal = JSON.parse(localStorage.getItem("product"));
 
   const [product, setProduct] = useState(dataProduct);
-  const [image, setImage] = useState();
+  const [image, setImage] = useState(dataLocal.imageMain);
   useEffect(() => {
-    setImage(dataLocal.imageMain);
-  }, []);
+    if (dataLocal) {
+      setImage(dataLocal.imageMain);
+    }
+  }, [dataLocal.imageMain]);
 
   const [checkColor, setCheckColor] = useState(dataLocal?.color[0]);
   const dispatch = useDispatch();
