@@ -16,7 +16,6 @@ export default function ProductCart({ data }) {
     setTotalPrice(data.quantity * data.priceSale);
     dispatch(updateQuantity({ id: data?.id, quantity: data.quantity }));
   };
-  console.log(19, data.quantity);
   useEffect(() => {
     update();
   }, [data.priceSale, data?.color, data.quantity]);

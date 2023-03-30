@@ -23,15 +23,8 @@ import ModalInforProduct from "../../components/Modal/ModalInforProduct";
 
 export default function Home() {
   const [product, setProduct] = useState(dataProduct);
-  const [productSale, setProductSale] = useState();
-  useEffect(() => {
-    if (product) {
-      const dataSale = product.filter((value) => value.sale === true);
-      setProductSale(dataSale);
-    }
-  }, [product]);
-  const dispatch = useDispatch();
 
+  const dispatch = useDispatch();
   const handleProductDetail = (item) => {
     dispatch(getProduct(item));
     setProductToLS(item);
@@ -476,7 +469,7 @@ export default function Home() {
             <h1 className="text-center home_sale_title mt-[60px] mb-[55px] font-medium text-[50px]">
               Our bestsellers
             </h1>
-            <ProductSales dataProduct={productSale} />
+            <ProductSales dataProduct={product} checkGPS={true} />
           </div>
           {/* homeshop */}
           <div className="w-[80%] home_nameShop m-auto py-[100px]">

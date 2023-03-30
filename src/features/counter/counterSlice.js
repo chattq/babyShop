@@ -18,7 +18,7 @@ export const counterSlice = createSlice({
       state.value -= 1;
     },
     getProduct: (state, actions) => {
-      state.product.push(actions.payload);
+      state.product = actions.payload;
     },
     addToCart: (state, actions) => {
       const check = state.listCart.findIndex(

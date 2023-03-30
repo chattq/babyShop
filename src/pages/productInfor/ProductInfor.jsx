@@ -22,20 +22,16 @@ import { useNavigate } from "react-router-dom";
 
 export default function ProductInfor() {
   const dataLocal = JSON.parse(localStorage.getItem("product"));
-  const [product, setProduct] = useState([]);
-  const [productSale, setProductSale] = useState();
-  const nav = useNavigate();
+
+  const [product, setProduct] = useState(dataProduct);
+  const [image, setImage] = useState();
   useEffect(() => {
-    setProduct(dataProduct);
-    if (product) {
-      const dataSale = product.filter((value) => value.sale === true);
-      setProductSale(dataSale);
-    }
-  }, [product]);
-  const [image, setImage] = useState(dataLocal.imageMain);
+    setImage(dataLocal?.imageMain);
+  }, [dataLocal]);
+
   const [checkColor, setCheckColor] = useState(dataLocal?.color[0]);
   const dispatch = useDispatch();
-  const [quantity1, setQuantity] = useState(0);
+  const [quantity1, setQuantity] = useState(1);
   const sentDataCart = (item) => {
     dispatch(
       addToCart({
@@ -44,7 +40,7 @@ export default function ProductInfor() {
         color: checkColor,
       })
     );
-    setQuantity(0);
+    setQuantity(1);
     toast.success("Mua hàng thành công");
     // setTimeout(() => {
     //   nav("/");
@@ -112,7 +108,7 @@ export default function ProductInfor() {
                 <span
                   className="cursor-pointer"
                   onClick={() => {
-                    if (quantity1 > 0) {
+                    if (quantity1 > 1) {
                       setQuantity((pre) => pre - 1);
                     }
                   }}>
@@ -125,7 +121,7 @@ export default function ProductInfor() {
                   <FontAwesomeIcon icon={faPlus} />
                 </span>
               </div>
-              {quantity1 !== 0 ? (
+              {quantity1 !== -2 ? (
                 <button
                   className="bg-[#8a8c8e] w-full cursor-pointer text-center rounded font-bold text-white  py-3"
                   onClick={() => sentDataCart(dataLocal)}>
@@ -178,7 +174,7 @@ export default function ProductInfor() {
               </div>
             </div>
           </div>
-          <div className="flex w-[50%] productInfor_img h-[40%]">
+          <a href="#" className="flex w-[50%] productInfor_img h-[40%]">
             <div className="flex flex-col justify-center mr-3">
               {dataLocal.image.map((img, index) => (
                 <div
@@ -196,7 +192,7 @@ export default function ProductInfor() {
             <div className="h-[600px] productInfor_imgMain overflow-hidden">
               <img src={image} alt="" className="h-full w-full object-cover" />
             </div>
-          </div>
+          </a>
         </div>
       </div>
       <div className="bg-[#ffff]">
@@ -688,7 +684,7 @@ export default function ProductInfor() {
             <div>
               <h1 className="text-[30px] font-medium">Related Products</h1>
               <div>
-                <ProductSales dataProduct={productSale} />
+                <ProductSales dataProduct={product} checkGPS={false} />
               </div>
             </div>
             {/*  */}
