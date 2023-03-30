@@ -20,7 +20,6 @@ import ModalInforProduct from "./Modal/ModalInforProduct";
 export default function ProductSales({ dataProduct, checkGPS }) {
   const [product, setProduct] = useState(dataProduct);
   const dispatch = useDispatch();
-  const nav = useNavigate();
   // like
   const handleIncrementHeart = (item) => {
     let index = product.findIndex((index) => index.id === item.id);
@@ -70,15 +69,28 @@ export default function ProductSales({ dataProduct, checkGPS }) {
             .map((item) => (
               <div className="w-[20%] home_cart" key={item.id}>
                 <div className="card_home relative">
-                  <Link
-                    onClick={() => handleProductDetail(item)}
-                    to={"/productInfor"}>
-                    <img
-                      src={item.imageMain}
-                      alt=""
-                      className="w-[100%] h-[100%] "
-                    />
-                  </Link>
+                  {checkGPS ? (
+                    <Link
+                      onClick={() => handleProductDetail(item)}
+                      to={"/productInfor"}>
+                      <img
+                        src={item.imageMain}
+                        alt=""
+                        className="w-[100%] h-[100%] "
+                      />
+                    </Link>
+                  ) : (
+                    <a
+                      onClick={() => handleProductDetail(item)}
+                      href={"/productInfor"}>
+                      <img
+                        src={item.imageMain}
+                        alt=""
+                        className="w-[100%] h-[100%] "
+                      />
+                    </a>
+                  )}
+
                   <div className="card_home_nav text-black px-6 flex items-center justify-between overflow-hidden">
                     <Link
                       onClick={() => handleProductDetail(item)}
