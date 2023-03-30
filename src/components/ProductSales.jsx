@@ -69,28 +69,15 @@ export default function ProductSales({ dataProduct, checkGPS }) {
             .map((item) => (
               <div className="w-[20%] home_cart" key={item.id}>
                 <div className="card_home relative">
-                  {checkGPS ? (
-                    <Link
-                      onClick={() => handleProductDetail(item)}
-                      to={"/productInfor"}>
-                      <img
-                        src={item.imageMain}
-                        alt=""
-                        className="w-[100%] h-[100%] "
-                      />
-                    </Link>
-                  ) : (
-                    <a
-                      onClick={() => handleProductDetail(item)}
-                      href={"/productInfor"}>
-                      <img
-                        src={item.imageMain}
-                        alt=""
-                        className="w-[100%] h-[100%] "
-                      />
-                    </a>
-                  )}
-
+                  <Link
+                    onClick={() => handleProductDetail(item)}
+                    to={"/productInfor"}>
+                    <img
+                      src={item.imageMain}
+                      alt=""
+                      className="w-[100%] h-[100%] "
+                    />
+                  </Link>
                   <div className="card_home_nav text-black px-6 flex items-center justify-between overflow-hidden">
                     <Link
                       onClick={() => handleProductDetail(item)}
