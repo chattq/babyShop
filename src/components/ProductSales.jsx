@@ -18,7 +18,6 @@ import { setProductToLS } from "../others/localAction";
 import ModalInforProduct from "./Modal/ModalInforProduct";
 
 export default function ProductSales({ dataProduct, checkGPS }) {
-  console.log(21, checkGPS);
   const [product, setProduct] = useState(dataProduct);
   const dispatch = useDispatch();
   const nav = useNavigate();
@@ -78,7 +77,9 @@ export default function ProductSales({ dataProduct, checkGPS }) {
                       />
                     </Link>
                   ) : (
-                    <a onClick={() => handleProductDetail(item)} href="#">
+                    <a
+                      onClick={() => handleProductDetail(item)}
+                      href="/productDetail">
                       <img
                         src={item.imageMain}
                         alt=""

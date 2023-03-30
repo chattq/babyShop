@@ -24,10 +24,10 @@ export default function ProductInfor() {
   const dataLocal = JSON.parse(localStorage.getItem("product"));
 
   const [product, setProduct] = useState(dataProduct);
-  const [image, setImage] = useState();
+  const [image, setImage] = useState(dataLocal?.imageMain);
   useEffect(() => {
-    setImage(dataLocal?.imageMain);
-  }, [dataLocal]);
+    setImage(dataLocal.imageMain);
+  }, []);
 
   const [checkColor, setCheckColor] = useState(dataLocal?.color[0]);
   const dispatch = useDispatch();
@@ -174,7 +174,7 @@ export default function ProductInfor() {
               </div>
             </div>
           </div>
-          <a href="#" className="flex w-[50%] productInfor_img h-[40%]">
+          <div className="flex w-[50%] productInfor_img h-[40%]">
             <div className="flex flex-col justify-center mr-3">
               {dataLocal.image.map((img, index) => (
                 <div
@@ -192,7 +192,7 @@ export default function ProductInfor() {
             <div className="h-[600px] productInfor_imgMain overflow-hidden">
               <img src={image} alt="" className="h-full w-full object-cover" />
             </div>
-          </a>
+          </div>
         </div>
       </div>
       <div className="bg-[#ffff]">
