@@ -24,7 +24,7 @@ export default function ProductInfor() {
   const dataLocal = JSON.parse(localStorage.getItem("product"));
 
   const [product, setProduct] = useState(dataProduct);
-  const [image, setImage] = useState(dataLocal?.imageMain);
+  const [image, setImage] = useState();
   useEffect(() => {
     setImage(dataLocal.imageMain);
   }, []);
@@ -174,7 +174,6 @@ export default function ProductInfor() {
               </div>
             </div>
           </div>
-          <a href="#"></a>
           <div className="flex w-[50%] productInfor_img h-[40%]">
             <div className="flex flex-col justify-center mr-3">
               {dataLocal.image.map((img, index) => (

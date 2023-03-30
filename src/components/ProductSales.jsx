@@ -55,7 +55,6 @@ export default function ProductSales({ dataProduct, checkGPS }) {
   const handleProductDetail = (item) => {
     dispatch(getProduct(item));
     setProductToLS(item);
-    nav("#");
   };
   return (
     <div className="mt-[50px] home_sale_container">
@@ -77,7 +76,7 @@ export default function ProductSales({ dataProduct, checkGPS }) {
                       />
                     </Link>
                   ) : (
-                    <a onClick={() => handleProductDetail(item)} href="#">
+                    <a onClick={() => handleProductDetail(item)} href="">
                       <img
                         src={item.imageMain}
                         alt=""
