@@ -13,6 +13,10 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../../features/counter/counterSlice";
 import ProductSales from "../../components/ProductSales";
 import { dataProduct } from "../../dataProduct";
+import ModalSize from "../../components/Modal/ModalSize";
+import { Tooltip } from "antd";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 // Import Swiper styles
 
@@ -20,6 +24,7 @@ export default function ProductInfor() {
   const dataLocal = JSON.parse(localStorage.getItem("product"));
   const [product, setProduct] = useState();
   const [productSale, setProductSale] = useState();
+  const nav = useNavigate();
   useEffect(() => {
     setProduct(dataProduct);
     if (product) {
@@ -30,7 +35,7 @@ export default function ProductInfor() {
   const [image, setImage] = useState(dataLocal.imageMain);
   const [checkColor, setCheckColor] = useState(dataLocal?.color[0]);
   const dispatch = useDispatch();
-  const [quantity1, setQuantity] = useState(1);
+  const [quantity1, setQuantity] = useState(0);
   const sentDataCart = (item) => {
     dispatch(
       addToCart({
@@ -39,6 +44,11 @@ export default function ProductInfor() {
         color: checkColor,
       })
     );
+    setQuantity(0);
+    toast.success("Mua hàng thành công");
+    // setTimeout(() => {
+    //   nav("/");
+    // }, 2000);
   };
   const handleChangeImg = (img) => {
     setImage(img);
@@ -64,10 +74,12 @@ export default function ProductInfor() {
             </ul>
             <p className="text-[16px] text-[#6a717c]">{dataLocal.material}</p>
             <div className="text-[#ebc989] mt-5 text-[25px]">
-              <span>
-                <FontAwesomeIcon icon={faRulerCombined} />
-              </span>
-              <span className="text-[20px] ml-3">Sizes chart</span>
+              <ModalSize>
+                <span>
+                  <FontAwesomeIcon icon={faRulerCombined} />
+                </span>
+                <span className="text-[20px] ml-3">Sizes chart</span>
+              </ModalSize>
             </div>
             <div className="my-[25px]">
               <span className="line-through text-[#ebc989] text-[30px] opacity-70">
@@ -100,7 +112,7 @@ export default function ProductInfor() {
                 <span
                   className="cursor-pointer"
                   onClick={() => {
-                    if (quantity1 > 1) {
+                    if (quantity1 > 0) {
                       setQuantity((pre) => pre - 1);
                     }
                   }}>
@@ -113,11 +125,21 @@ export default function ProductInfor() {
                   <FontAwesomeIcon icon={faPlus} />
                 </span>
               </div>
-              <div
-                className="bg-[#8a8c8e] w-full cursor-pointer text-center rounded font-bold text-white  py-3"
-                onClick={() => sentDataCart(dataLocal)}>
-                Add to cart
-              </div>
+              {quantity1 !== 0 ? (
+                <button
+                  className="bg-[#8a8c8e] w-full cursor-pointer text-center rounded font-bold text-white  py-3"
+                  onClick={() => sentDataCart(dataLocal)}>
+                  Add to cart
+                </button>
+              ) : (
+                <Tooltip title="Vui lòng nhập số lượng">
+                  <button
+                    disabled
+                    className="bg-[#8a8c8e] w-full cursor-pointer text-center rounded font-bold text-white  py-3">
+                    Add to cart
+                  </button>
+                </Tooltip>
+              )}
             </div>
             <div className="mt-5">
               <div className="flex justify-between">

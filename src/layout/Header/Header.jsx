@@ -6,10 +6,11 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 import Canvas from "../../components/Canvas";
+import { dataProduct } from "../../dataProduct";
 import CanvasNav from "../../others/CanvasNav";
 import { formatMoney } from "../../others/formatMoney";
 

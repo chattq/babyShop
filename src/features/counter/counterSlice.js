@@ -18,16 +18,14 @@ export const counterSlice = createSlice({
       state.value -= 1;
     },
     getProduct: (state, actions) => {
-      state.product = actions.payload;
+      state.product.push(actions.payload);
     },
-
     addToCart: (state, actions) => {
       const check = state.listCart.findIndex(
-        (item) => item.id === actions.payload.id
+        (item) => item.color === actions.payload.color
       );
       if (check !== -1) {
         state.listCart[check].quantity += actions.payload.quantity;
-        state.listCart[check].color = actions.payload.color;
       } else {
         state.listCart.push(actions.payload);
       }
@@ -38,19 +36,19 @@ export const counterSlice = createSlice({
     },
     updateQuantity: (state, actions) => {
       const check = state.listCart.findIndex(
-        (item) => item.id === actions.payload.id
+        (item) => item.color === actions.payload.color
       );
       if (check !== -1) {
-        state.listCart[check].quantity1 = actions.payload.quantity1;
+        state.listCart[check].quantity = actions.payload.quantity;
       }
       state.total = state.listCart.reduce(
-        (sum, item) => sum + +item?.priceSale * item?.quantity1,
+        (sum, item) => sum + +item?.priceSale * item?.quantity,
         0
       );
     },
     removeItem(state, actions) {
       state.listCart = state.listCart.filter(
-        (item) => item.id !== actions.payload.id
+        (item) => item.color !== actions.payload.color
       );
       state.total = state.listCart.reduce(
         (sum, item) => sum + +item?.priceSale * item?.quantity,

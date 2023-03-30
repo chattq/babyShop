@@ -1,4 +1,5 @@
 import {
+  faHeart,
   faHeartBroken,
   faLink,
   faMaximize,
@@ -30,7 +31,7 @@ export default function ProductSales({ dataProduct }) {
   };
   return (
     <div className="mt-[50px] home_sale_container">
-      <div className="flex items-center home_card_container gap-6 flex-wrap m-auto">
+      <div className="flex items-center home_card_container gap-6 justify-center flex-wrap m-auto">
         {dataProduct &&
           dataProduct.map((item) => (
             <div className="w-[20%] home_cart" key={item.id}>

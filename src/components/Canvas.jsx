@@ -47,14 +47,7 @@ export default function Canvas({ children }) {
             {productCart &&
               productCart.map((item) => (
                 <div className="px-4 pt-4" key={item.id}>
-                  <ProductCart
-                    data={item}
-                    id={item.id}
-                    image={item.imageMain}
-                    name={item.name}
-                    quantity={item.quantity}
-                    priceSale={item.priceSale}
-                  />
+                  <ProductCart data={item} />
                 </div>
               ))}
           </div>

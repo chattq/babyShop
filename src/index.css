@@ -42,6 +42,10 @@
   .card_home:hover .card_home_nav {
     height: 60px;
   }
+  .modal_InforProduct {
+    width: 960px !important;
+  }
+
   @media only screen and (max-width: 486.4px) {
     /* footer */
     .footer_container {
@@ -411,6 +415,25 @@
       bottom: 0;
       padding: 0 21px;
       background-color: #f7f7f7;
+    }
+    /* modal_inforProduct */
+    .modal_inforProduct {
+      flex-direction: column;
+      max-height: 600px;
+    }
+    .modal_inforProduct .slick-dots.slick-dots-bottom {
+      display: none !important;
+    }
+    .modal_inforProduct_carousel {
+      width: 100%;
+    }
+    .modal_inforProduct_infor_box {
+      padding-left: 0;
+      padding-top: 15px;
+    }
+    .modal_inforProduct_infor_name {
+      font-size: 22px;
+      font-weight: 600;
     }
   }
 }

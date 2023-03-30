@@ -19,30 +19,54 @@ import { formatMoney } from "../../others/formatMoney";
 import { setProductToLS } from "../../others/localAction";
 import { Carousel } from "antd";
 import ProductSales from "../../components/ProductSales";
+import ModalInforProduct from "../../components/Modal/ModalInforProduct";
 
 export default function Home() {
-  const [product, setProduct] = useState();
+  const [product, setProduct] = useState(dataProduct);
   const [productSale, setProductSale] = useState();
+  const [like, setLike] = useState(false);
   useEffect(() => {
-    setProduct(dataProduct);
     if (product) {
       const dataSale = product.filter((value) => value.sale === true);
       setProductSale(dataSale);
     }
   }, [product]);
-
   const dispatch = useDispatch();
 
   const handleProductDetail = (item) => {
     dispatch(getProduct(item));
     setProductToLS(item);
   };
+
   const handleIncrementHeart = (item) => {
+    let index = product.findIndex((index) => index.id === item.id);
     dispatch(increment());
+    let copyData = [...product];
+    copyData[index] = {
+      ...item,
+      like: false,
+    };
+    dispatch(
+      getProduct(
+        (copyData[index] = {
+          ...item,
+          like: false,
+        })
+      )
+    );
+    setProduct(copyData);
   };
   const handleDecrementHeart = (item) => {
     dispatch(decrement());
+    let index = product.findIndex((index) => index.id === item.id);
+    let copyData = [...product];
+    copyData[index] = {
+      ...item,
+      like: true,
+    };
+    setProduct(copyData);
   };
+
   return (
     <>
       <div className="bg-white home_box mb-[570px]">
@@ -178,7 +202,7 @@ export default function Home() {
                       </Link>
                       {item.like ? (
                         <div
-                          className="hover:text-[#ebc989]"
+                          className="hover:text-[#ebc989] cursor-pointer"
                           onClick={() => handleIncrementHeart(item)}
                           key={item.id}>
                           <FontAwesomeIcon
@@ -188,7 +212,7 @@ export default function Home() {
                         </div>
                       ) : (
                         <div
-                          className="hover:text-[#ebc989]"
+                          className="hover:text-[#ebc989] cursor-pointer"
                           onClick={() => handleDecrementHeart(item)}
                           key={item.id}>
                           <FontAwesomeIcon
@@ -197,12 +221,17 @@ export default function Home() {
                           />
                         </div>
                       )}
-                      <div className="hover:text-[#ebc989]">
-                        <FontAwesomeIcon
-                          icon={faMaximize}
-                          style={{ fontSize: "20px" }}
-                        />
-                      </div>
+                      <ModalInforProduct
+                        children={
+                          <div className="hover:text-[#ebc989] cursor-pointer">
+                            <FontAwesomeIcon
+                              icon={faMaximize}
+                              style={{ fontSize: "20px" }}
+                            />
+                          </div>
+                        }
+                        data={item}
+                      />
                     </div>
                   </div>
                   <div>
