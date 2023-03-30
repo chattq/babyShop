@@ -77,9 +77,7 @@ export default function ProductSales({ dataProduct, checkGPS }) {
                       />
                     </Link>
                   ) : (
-                    <a
-                      onClick={() => handleProductDetail(item)}
-                      href="/productDetail">
+                    <a onClick={() => handleProductDetail(item)} href="#">
                       <img
                         src={item.imageMain}
                         alt=""

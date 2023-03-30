@@ -174,6 +174,7 @@ export default function ProductInfor() {
               </div>
             </div>
           </div>
+          <a href="#"></a>
           <div className="flex w-[50%] productInfor_img h-[40%]">
             <div className="flex flex-col justify-center mr-3">
               {dataLocal.image.map((img, index) => (
