@@ -55,6 +55,10 @@ export default function ProductSales({ dataProduct, checkGPS }) {
   const handleProductDetail = (item) => {
     dispatch(getProduct(item));
     setProductToLS(item);
+  };
+  const handleProductDetailA = (item) => {
+    dispatch(getProduct(item));
+    setProductToLS(item);
     window.location.href = "/productDetail";
   };
   return (
@@ -77,7 +81,7 @@ export default function ProductSales({ dataProduct, checkGPS }) {
                       />
                     </Link>
                   ) : (
-                    <div onClick={() => handleProductDetail(item)} href="">
+                    <div onClick={() => handleProductDetailA(item)} href="">
                       <img
                         src={item.imageMain}
                         alt=""
