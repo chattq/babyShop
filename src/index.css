@@ -339,8 +339,8 @@
       flex-direction: column;
     }
     .productInfor_img {
-      flex-direction: column;
       margin-bottom: 50px;
+      margin-top: 30px;
     }
     .productInfor_img_container {
       width: 100%;
@@ -420,6 +420,8 @@
     .modal_inforProduct {
       flex-direction: column;
       max-height: 600px;
+      overflow-y: scroll;
+      overflow-x: hidden;
     }
     .modal_inforProduct .slick-dots.slick-dots-bottom {
       display: none !important;
@@ -430,6 +432,7 @@
     .modal_inforProduct_infor_box {
       padding-left: 0;
       padding-top: 15px;
+      overflow: initial;
     }
     .modal_inforProduct_infor_name {
       font-size: 22px;
