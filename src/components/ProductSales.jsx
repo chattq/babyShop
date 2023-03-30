@@ -59,7 +59,7 @@ export default function ProductSales({ dataProduct, checkGPS }) {
   const handleProductDetailA = (item) => {
     dispatch(getProduct(item));
     setProductToLS(item);
-    window.location.href = "/productDetail";
+    window.location.href = "";
   };
   return (
     <div className="mt-[50px] home_sale_container">
