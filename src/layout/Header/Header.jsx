@@ -30,7 +30,7 @@ export default function Header() {
 
   window.addEventListener("scroll", changeHeader);
   return (
-    <div>
+    <div className="bg-[#fff]">
       <div className=" bg-black header_top ">
         <div className="flex justify-between items-center h-[45px] w-[76%] m-auto">
           <div className="text-[#bbbbbb] font-medium">

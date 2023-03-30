@@ -22,7 +22,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function ProductInfor() {
   const dataLocal = JSON.parse(localStorage.getItem("product"));
-  const [product, setProduct] = useState();
+  const [product, setProduct] = useState([]);
   const [productSale, setProductSale] = useState();
   const nav = useNavigate();
   useEffect(() => {

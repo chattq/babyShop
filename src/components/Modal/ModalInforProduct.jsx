@@ -66,8 +66,8 @@ export default function ModalInforProduct({ children, data }) {
         <div className="flex modal_inforProduct">
           <div className="w-[50%] modal_inforProduct_carousel ">
             <Carousel draggable={true}>
-              {data.image.map((value) => (
-                <div>
+              {data.image.map((value, index) => (
+                <div key={index}>
                   <img src={value} alt="" />
                 </div>
               ))}

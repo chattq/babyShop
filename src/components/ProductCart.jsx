@@ -13,11 +13,10 @@ export default function ProductCart({ data }) {
   const dispatch = useDispatch();
   const [totalPrice, setTotalPrice] = useState(data.quantity * data.priceSale);
   const update = () => {
-    // setQuantity(data.quantity);
     setTotalPrice(data.quantity * data.priceSale);
     dispatch(updateQuantity({ id: data?.id, quantity: data.quantity }));
   };
-
+  console.log(19, data.quantity);
   useEffect(() => {
     update();
   }, [data.priceSale, data?.color, data.quantity]);
@@ -40,7 +39,7 @@ export default function ProductCart({ data }) {
       addToCart({
         ...data,
         id: 2,
-        quantity: -1,
+        quantity: data.quantity > 1 ? -1 : 0,
       })
     );
   };
@@ -77,7 +76,9 @@ export default function ProductCart({ data }) {
       <div className="flex py-2 pl-10">
         <div className="border border-[#EBEBEB] rounded px-5 py-2 bg-[rgba(240,242,246,1)]">
           <span
-            className="cursor-pointer"
+            className={
+              data.quantity === 1 ? "cursor-not-allowed" : " cursor-pointer"
+            }
             onClick={() => handleMinusNumber(data)}>
             <FontAwesomeIcon icon={faMinus} />
           </span>

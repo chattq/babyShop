@@ -24,7 +24,6 @@ import ModalInforProduct from "../../components/Modal/ModalInforProduct";
 export default function Home() {
   const [product, setProduct] = useState(dataProduct);
   const [productSale, setProductSale] = useState();
-  const [like, setLike] = useState(false);
   useEffect(() => {
     if (product) {
       const dataSale = product.filter((value) => value.sale === true);
