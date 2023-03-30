@@ -96,7 +96,7 @@ export default function CanvasNav({ children }) {
                     HOME
                   </NavLink>
                   <NavLink
-                    to={"/productDetail"}
+                    to={"/productInfor"}
                     className={({ isActive }) =>
                       isActive
                         ? "text-[#ebc989] nav_active relative leading-[60px] px-4"

@@ -14,7 +14,7 @@ export default function useRouteElements() {
       ),
     },
     {
-      path: "/productDetail",
+      path: "/productInfor",
       element: (
         <LayoutPage>
           <ProductInfor />

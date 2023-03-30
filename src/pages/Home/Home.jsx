@@ -175,7 +175,7 @@ export default function Home() {
                   <div className="card_home relative">
                     <Link
                       onClick={() => handleProductDetail(item)}
-                      to={"/productDetail"}>
+                      to={"productInfor"}>
                       <img
                         src={item.imageMain}
                         alt=""
@@ -185,7 +185,7 @@ export default function Home() {
                     <div className="card_home_nav text-black px-6 flex items-center justify-between overflow-hidden">
                       <Link
                         onClick={() => handleProductDetail(item)}
-                        to={"/productDetail"}
+                        to={"productInfor"}
                         className="hover:text-[#ebc989]">
                         <FontAwesomeIcon
                           icon={faLink}
@@ -255,12 +255,12 @@ export default function Home() {
           </div>
           <div className="flex mt-[80px] header_btn_group justify-center items-center">
             <Link
-              to={"/productDetail"}
+              to={"productInfor"}
               className="bg-[#171b20] header_goShop text-white font-semibold px-10 py-3 rounded mr-5 ">
               GO TO SHOP
             </Link>
             <Link
-              to={"/productDetail"}
+              to={"productInfor"}
               className="bg-[#ececec] text-[#626262] font-semibold px-10 py-3 rounded">
               SEE PROMOTIONS
             </Link>

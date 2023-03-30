@@ -72,7 +72,7 @@ export default function ProductSales({ dataProduct, checkGPS }) {
                 <div className="card_home relative">
                   <Link
                     onClick={() => handleProductDetail(item)}
-                    to={"/productDetail"}>
+                    to={"/productInfor"}>
                     <img
                       src={item.imageMain}
                       alt=""
@@ -82,7 +82,7 @@ export default function ProductSales({ dataProduct, checkGPS }) {
                   <div className="card_home_nav text-black px-6 flex items-center justify-between overflow-hidden">
                     <Link
                       onClick={() => handleProductDetail(item)}
-                      to={"/productDetail"}
+                      to={"/productInfor"}
                       className="hover:text-[#ebc989]">
                       <FontAwesomeIcon
                         icon={faLink}
