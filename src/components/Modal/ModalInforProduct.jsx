@@ -41,6 +41,8 @@ export default function ModalInforProduct({ children, data }) {
         ...item,
         quantity: quantity1,
         color: checkColor,
+        height: checkHeight,
+        age: checkSelect,
       })
     );
     toast.success("Mua hàng thành công");
@@ -56,9 +58,6 @@ export default function ModalInforProduct({ children, data }) {
   };
   const handleHeight = (value) => {
     setCheckHeight(value);
-  };
-  const handleSelect = (value) => {
-    setCheckSelect(value);
   };
   return (
     <>
@@ -133,10 +132,10 @@ export default function ModalInforProduct({ children, data }) {
                 <div className="font-semibold mr-[60px]">Age</div>
                 <select
                   className="w-[220px] bg-[aliceblue] rounded-md"
-                  onChange={handleSelect}>
+                  onChange={(e) => setCheckSelect(e.target.value)}>
                   <option> Choose an option</option>
                   {data?.age.map((value, index) => (
-                    <option value={index}>{value}</option>
+                    <option value={value}>{value}</option>
                   ))}
                 </select>
               </div>

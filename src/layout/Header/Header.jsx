@@ -11,8 +11,6 @@ import { useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 import Canvas from "../../components/Canvas";
 import DropDownLoginMenu from "../../components/DropDownLogin/DropDownLoginMenu/DropDownLoginMenu";
-import ModalLogin from "../../components/Modal/ModalLogin";
-import { dataProduct } from "../../dataProduct";
 import CanvasNav from "../../others/CanvasNav";
 import { formatMoney } from "../../others/formatMoney";
 

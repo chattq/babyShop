@@ -74,8 +74,7 @@ export const dataProduct = [
       "https://themes.muffingroup.com/be/babyshop/wp-content/uploads/2021/10/babyshop-product5a.webp",
     image: [
       "https://themes.muffingroup.com/be/babyshop/wp-content/uploads/2021/10/babyshop-product5a.webp",
-      "https://themes.muffingroup.com/be/babyshop/wp-content/uploads/2021/10/babyshop-product1b-300x300.webp",
-      "https://themes.muffingroup.com/be/babyshop/wp-content/uploads/2021/10/babyshop-product1c-300x300.webp",
+      "https://themes.muffingroup.com/be/babyshop/wp-content/uploads/2021/10/babyshop-product5b.webp",
     ],
     color: ["blue", "brown", "red", "yellow"],
     tag: ["Duvet cover", "kids", "Recyclable"],
