@@ -46,6 +46,7 @@ export default function ProductCart({ data }) {
       dispatch(removeItem({ color: data?.color }));
     }
   };
+  console.log(49, data.quantity);
   return (
     <div className="bg-[rgba(0,0,0,.03)] rounded-[6px]">
       <div className="flex p-[15px] items-center border-b-[1px]">
