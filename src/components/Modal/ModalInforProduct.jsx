@@ -34,7 +34,7 @@ export default function ModalInforProduct({ children, data }) {
   const [checkHeight, setCheckHeight] = useState();
   const [checkSelect, setCheckSelect] = useState();
   const dispatch = useDispatch();
-  const [quantity1, setQuantity] = useState(0);
+  const [quantity1, setQuantity] = useState(1);
   const sentDataCart = (item) => {
     dispatch(
       addToCart({
@@ -43,8 +43,10 @@ export default function ModalInforProduct({ children, data }) {
         color: checkColor,
       })
     );
-    setQuantity(0);
     toast.success("Mua hàng thành công");
+    setTimeout(() => {
+      setIsModalOpen(false);
+    }, 1000);
   };
   const handleChangeImg = (img) => {
     setImage(img);
