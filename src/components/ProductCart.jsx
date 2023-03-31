@@ -34,13 +34,17 @@ export default function ProductCart({ data }) {
     );
   };
   const handleMinusNumber = (data) => {
+    console.log(37, data.quantity);
     dispatch(
       addToCart({
         ...data,
         id: 2,
-        quantity: data.quantity > 1 ? -1 : 0,
+        quantity: -1,
       })
     );
+    if (data.quantity <= 1) {
+      dispatch(removeItem({ color: data?.color }));
+    }
   };
   return (
     <div className="bg-[rgba(0,0,0,.03)] rounded-[6px]">
@@ -75,9 +79,7 @@ export default function ProductCart({ data }) {
       <div className="flex py-2 pl-10">
         <div className="border border-[#EBEBEB] rounded px-5 py-2 bg-[rgba(240,242,246,1)]">
           <span
-            className={
-              data.quantity === 1 ? "cursor-not-allowed" : " cursor-pointer"
-            }
+            className={"cursor-pointer"}
             onClick={() => handleMinusNumber(data)}>
             <FontAwesomeIcon icon={faMinus} />
           </span>

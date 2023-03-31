@@ -45,9 +45,6 @@ export default function ModalInforProduct({ children, data }) {
     );
     setQuantity(0);
     toast.success("Mua hàng thành công");
-    // setTimeout(() => {
-    //   nav("/");
-    // }, 2000);
   };
   const handleChangeImg = (img) => {
     setImage(img);
