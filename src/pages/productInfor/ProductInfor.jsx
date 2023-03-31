@@ -243,8 +243,16 @@ export default function ProductInfor() {
             </div>
           </div>
         </div>
+        <div
+          className="text-center cursor-pointer pt-[40px] z-10"
+          onClick={goToElement}>
+          <FontAwesomeIcon
+            icon={faChevronDown}
+            style={{ fontSize: "40px", color: "gray" }}
+          />
+        </div>
       </div>
-      <div className="bg-[#ffff]">
+      <div className="bg-[#ffff]" ref={scrollToElement}>
         <div className="m-auto w-[80%]">
           <div className="w-[50%] productInfor_box_des_container m-auto">
             <div className="flex productInfor_box_des  pt-14 justify-between ">
@@ -560,18 +568,10 @@ export default function ProductInfor() {
                 />
               </div>
             </div>
-            <div
-              className="text-center cursor-pointer pb-[40px]"
-              onClick={goToElement}>
-              <FontAwesomeIcon
-                icon={faChevronDown}
-                style={{ fontSize: "40px", color: "gray" }}
-              />
-            </div>
           </div>
         </div>
         {/*  */}
-        <div className="flex justify-center" ref={scrollToElement}>
+        <div className="flex justify-center">
           <div className="pt-[100px] productInfor_compare_container m-auto w-[70%]">
             <div className="productInfor_compare">
               <h1 className="text-center productInfor_compare_underLine text-[50px] w-[300px] m-auto">
