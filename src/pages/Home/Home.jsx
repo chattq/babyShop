@@ -3,9 +3,10 @@ import {
   faMaximize,
   faHeart,
   faHeartBroken,
+  faBicycle,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Canvas from "../../components/Canvas";
@@ -20,9 +21,12 @@ import { setProductToLS } from "../../others/localAction";
 import { Carousel } from "antd";
 import ProductSales from "../../components/ProductSales";
 import ModalInforProduct from "../../components/Modal/ModalInforProduct";
+import ImageChangeHover from "../../components/ChangeImg/ImageChangeHover";
 
 export default function Home() {
   const [product, setProduct] = useState(dataProduct);
+  const [over, setOver] = useState();
+  console.log(28, over);
 
   const dispatch = useDispatch();
   const handleProductDetail = (item) => {
@@ -59,6 +63,7 @@ export default function Home() {
     setProduct(copyData);
   };
 
+  const imageRef = useRef();
   return (
     <>
       <div className="bg-white home_box mb-[570px]">
@@ -176,12 +181,13 @@ export default function Home() {
                     <Link
                       onClick={() => handleProductDetail(item)}
                       to={"productInfor"}>
-                      <img
-                        src={item.imageMain}
+                      <ImageChangeHover
+                        primaryImg={item.imageMain}
+                        secondaryImg={item.image[1]}
                         alt=""
-                        className="w-[100%] h-[100%] "
                       />
                     </Link>
+
                     <div className="card_home_nav text-black px-6 flex items-center justify-between overflow-hidden">
                       <Link
                         onClick={() => handleProductDetail(item)}
@@ -521,12 +527,20 @@ export default function Home() {
               </li>
             </ul>
           </div>
-          <div className="h-[230px] w-[90%] overflow-hidden m-auto">
-            <img
-              src="https://themes.muffingroup.com/be/babyshop/wp-content/uploads/2021/10/babyshop-instagram.webp"
-              alt=""
-              className="w-full h-full object-cover"
-            />
+          <div className="relative">
+            <div className="h-[230px] w-[90%] overflow-hidden m-auto">
+              <img
+                src="https://themes.muffingroup.com/be/babyshop/wp-content/uploads/2021/10/babyshop-instagram.webp"
+                alt=""
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="flex items-center absolute px-8 cursor-pointer rounded-lg py-4 top-[50%] translate-y-[-50%] left-[50%]  translate-x-[-50%] bg-[#ebc989]">
+              <div>
+                <FontAwesomeIcon style={{ color: "white" }} icon={faBicycle} />
+              </div>
+              <p className="text-white font-medium ml-4">INSTAGRAM</p>
+            </div>
           </div>
           <div className="mt-[80px] mb-[50px]">
             <div className="flex w-[88%] m-auto home_sevice items-center justify-between">

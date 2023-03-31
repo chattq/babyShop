@@ -5,9 +5,9 @@ import {
   faMaximize,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   decrement,
   getProduct,
@@ -15,6 +15,7 @@ import {
 } from "../features/counter/counterSlice";
 import { formatMoney } from "../others/formatMoney";
 import { setProductToLS } from "../others/localAction";
+import ImageChangeHover from "./ChangeImg/ImageChangeHover";
 import ModalInforProduct from "./Modal/ModalInforProduct";
 
 export default function ProductSales({ dataProduct, checkGPS }) {
@@ -71,11 +72,12 @@ export default function ProductSales({ dataProduct, checkGPS }) {
                 <div className="card_home relative">
                   <Link
                     onClick={() => handleProductDetail(item)}
-                    to={"/productInfor"}>
-                    <img
-                      src={item.imageMain}
+                    to={"/productInfor"}
+                    className="ease-in-out">
+                    <ImageChangeHover
+                      primaryImg={item.imageMain}
+                      secondaryImg={item.image[1]}
                       alt=""
-                      className="w-[100%] h-[100%] "
                     />
                   </Link>
                   <div className="card_home_nav text-black px-6 flex items-center justify-between overflow-hidden">

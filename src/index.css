@@ -21,6 +21,22 @@
     width: 100%;
     background-color: #ebc989;
   }
+  .productInfor_compare_underLine {
+    position: relative;
+    z-index: 1;
+  }
+  .productInfor_compare_underLine::after {
+    content: "";
+    position: absolute;
+    left: 13px;
+    bottom: 61%;
+    width: calc(64% + 0.2em);
+    height: 5%;
+    margin-left: -0.15em;
+    transform: skew(-12deg) translateX(0);
+    background: #ebc989;
+    z-index: -1;
+  }
   .header_hover:hover {
     color: #ebc989;
   }
@@ -347,6 +363,10 @@
     }
     .productInfor_img_cart {
       width: 100%;
+    }
+    .productInfor_compare_underLine::after {
+      left: 63px;
+      width: calc(42% + 0.2em);
     }
     .productInfor_img_cart_des {
       padding-left: 15px;

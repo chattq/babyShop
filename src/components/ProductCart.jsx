@@ -58,12 +58,20 @@ export default function ProductCart({ data }) {
         </div>
         <div className="border-r-[1px] border-[rgba(0,0,0,.08)]">
           <h2 className="font-semibold leading-5 mb-2">{data.name}</h2>
-          <div className="text-[14px] flex items-center mb-2">
-            Color:{" "}
-            <div
-              className={`h-5 w-5 rounded-full m-[2px] ml-2`}
-              style={{ backgroundColor: data.color }}
-            />
+          <div className="ml-2">
+            <div className="text-[13px] flex items-center ">
+              Color:{" "}
+              <div
+                className={`h-4 w-4 rounded-full m-[2px] ml-2`}
+                style={{ backgroundColor: data.color }}
+              />
+            </div>
+            <div className="text-[13px] flex items-center">
+              Height: <span className="ml-[10px]">{data.height}</span>
+            </div>
+            <div className="text-[13px] flex items-center mb-2">
+              Age: <span className="ml-[10px]">{data.age}</span>
+            </div>
           </div>
           <p className="text-[14px]">
             Price:{" "}

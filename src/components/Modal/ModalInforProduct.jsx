@@ -113,7 +113,7 @@ export default function ModalInforProduct({ children, data }) {
               {/* height */}
               <div className="flex items-center border-b-[rgba(0,0,0,.04)] flex-wrap border-b-[1px] pb-3 pt-2">
                 <div className="font-semibold mr-[60px] mb-2">Height</div>
-                <ul className="flex items-center gap-2 productInfor_height">
+                <ul className="flex cursor-pointer items-center gap-2 productInfor_height">
                   {data?.height.map((value, index) => (
                     <li
                       key={index}

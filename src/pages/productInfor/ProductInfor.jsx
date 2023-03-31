@@ -16,7 +16,7 @@ import { dataProduct } from "../../dataProduct";
 import ModalSize from "../../components/Modal/ModalSize";
 import { Select, Tooltip } from "antd";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // Import Swiper styles
 
@@ -42,6 +42,8 @@ export default function ProductInfor() {
         ...item,
         quantity: quantity1,
         color: checkColor,
+        height: checkHeight,
+        age: checkSelect,
       })
     );
     setQuantity(1);
@@ -59,9 +61,7 @@ export default function ProductInfor() {
   const handleHeight = (value) => {
     setCheckHeight(value);
   };
-  const handleSelect = (value) => {
-    setCheckSelect(value);
-  };
+
   return (
     <>
       <div className="bg-[#fcfcfc] pb-[50px] productInfor_box">
@@ -98,7 +98,7 @@ export default function ProductInfor() {
             {/* height */}
             <div className="flex items-center border-b-[rgba(0,0,0,.04)] flex-wrap border-b-[1px] pb-3">
               <div className="font-semibold mr-[60px]">Height</div>
-              <ul className="flex items-center gap-2 productInfor_height">
+              <ul className="flex cursor-pointer items-center gap-2 productInfor_height">
                 {dataLocal?.height.map((value, index) => (
                   <li
                     key={index}
@@ -118,10 +118,10 @@ export default function ProductInfor() {
               <div className="font-semibold mr-[60px]">Age</div>
               <select
                 className="w-[220px] bg-[aliceblue] rounded-md"
-                onChange={handleSelect}>
+                onChange={(e) => setCheckSelect(e.target.value)}>
                 <option> Choose an option</option>
                 {dataLocal?.age.map((value, index) => (
-                  <option value={index}>{value}</option>
+                  <option value={value}>{value}</option>
                 ))}
               </select>
             </div>
@@ -559,7 +559,7 @@ export default function ProductInfor() {
         <div className="flex justify-center">
           <div className="pt-[100px] productInfor_compare_container m-auto w-[70%]">
             <div className="productInfor_compare">
-              <h1 className="text-center text-[50px] w-[300px] m-auto">
+              <h1 className="text-center productInfor_compare_underLine text-[50px] w-[300px] m-auto">
                 Compare our products
               </h1>
               <p className="text-[18px] text-center mt-5">
@@ -730,9 +730,13 @@ export default function ProductInfor() {
               </div>
             </div>
             {/*  */}
-            <div className="bg-black py-10 mt-[80px] rounded-md m-auto">
+            <div className="bg-black hover:bg-[#ebc989] cursor-pointer py-10 mt-[80px] rounded-md m-auto">
               <span className="flex text-white justify-center font-semibold">
-                Not for you?- <p className="underline">Back to product list</p>
+                Not for you? -{" "}
+                <Link to={"/"} className="underline">
+                  {" "}
+                  Back to product list
+                </Link>
               </span>
             </div>
             {/*  */}
