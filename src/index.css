@@ -38,6 +38,30 @@
     background: #ebc989;
     z-index: -1;
   }
+  .home_generations_underline::after {
+    content: "";
+    position: absolute;
+    right: 17px;
+    bottom: 81%;
+    width: calc(39% + 0.2em);
+    height: 5%;
+    margin-left: -0.15em;
+    transform: skew(-12deg) translateX(0);
+    background: #ebc989;
+    z-index: -1;
+  }
+  .home_select_child::after {
+    content: "";
+    position: absolute;
+    right: 30px;
+    bottom: 8px;
+    width: calc(65% + 0.2em);
+    height: 8%;
+    margin-left: -0.15em;
+    transform: skew(-12deg) translateX(0);
+    background: #ebc989;
+    z-index: -1;
+  }
   .header_hover:hover {
     color: #ebc989;
   }
@@ -62,7 +86,33 @@
   .modal_InforProduct {
     width: 960px !important;
   }
+  .home_introduce_imgMain {
+    transition: all 0.3s ease-in-out;
+  }
 
+  .home_introduce_imgMain:hover .home_introduce_text,
+  .home_introduce_img1:hover .home_introduce_text {
+    bottom: 30px;
+    transition: all 0.3s ease-in-out;
+  }
+  .home_introduce_text::after {
+    content: "";
+    position: absolute;
+    height: 8px;
+    border-radius: 3px;
+    background-color: gainsboro;
+    width: 0;
+    z-index: 50;
+    transition: all 0.25s ease-in-out;
+  }
+  .home_introduce_text {
+    bottom: 0;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgb(85, 82, 82));
+  }
+  .home_introduce_imgMain:hover .home_introduce_text::after,
+  .home_introduce_img1:hover .home_introduce_text::after {
+    width: 100px;
+  }
   @media only screen and (max-width: 486.4px) {
     /* footer */
     .footer_container {
@@ -253,9 +303,43 @@
     .home_introduce_imgMain {
       width: 100%;
     }
+    .home_introduce_text p {
+      font-size: 12px;
+      text-align: center;
+    }
+    .home_introduce_text_des {
+      text-align: center;
+      font-size: 14px !important;
+      font-weight: 600;
+    }
+    .carousel_home_next {
+      left: 20px;
+    }
+    .carousel_home_prev {
+      right: 20px;
+    }
     .home_introduce_img {
       width: 100%;
     }
+    .home_silder_text_container {
+      top: 29%;
+    }
+    .home_silder_text_sale {
+      font-size: 80px;
+    }
+    .home_silder_text_holiday {
+      font-size: 40px;
+      line-height: 50px;
+    }
+    .home_silder_text_time {
+      flex-direction: column;
+      gap: 40px;
+      top: 180px;
+    }
+    .home_silder_text_time_day {
+      font-size: 25px;
+    }
+
     .home_sale_container {
       margin-top: 70px;
     }

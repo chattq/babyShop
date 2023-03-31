@@ -4,6 +4,10 @@ import {
   faHeart,
   faHeartBroken,
   faBicycle,
+  faUser,
+  faClock,
+  faChevronLeft,
+  faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useRef, useState } from "react";
@@ -25,8 +29,8 @@ import ImageChangeHover from "../../components/ChangeImg/ImageChangeHover";
 
 export default function Home() {
   const [product, setProduct] = useState(dataProduct);
-  const [over, setOver] = useState();
-  console.log(28, over);
+
+  const carouselRef = useRef();
 
   const dispatch = useDispatch();
   const handleProductDetail = (item) => {
@@ -75,14 +79,25 @@ export default function Home() {
                 style={{ width: "100%" }}
                 dotPosition="bottom"
                 className="home_carousel_header">
-                <div>
-                  <div className="flex justify-center items-center flex-col">
-                    <div className="w-full home_carousel_header_imMain h-[700px] ">
+                <div className="relative">
+                  <div className="flex justify-center relative items-center flex-col">
+                    <div className="w-full relative home_carousel_header_imMain h-[700px] ">
                       <img
                         src="https://cart-bebaby.vercel.app/assets/img/feature.jpg"
                         alt=""
                         className="w-full h-full object-cover"
                       />
+                    </div>
+                    <div className="absolute top-[40%] z-10">
+                      <h1 className="text-center text-[50px] italic">
+                        Collection
+                      </h1>
+                      <p className="text-center text-[55px] leading-[50px] font-semibold">
+                        Autumn - Winter
+                      </p>
+                      <p className="text-[80px] text-[#ebc989] text-center font-bold">
+                        2021
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -102,7 +117,7 @@ export default function Home() {
             <div className="w-[30%] home_header_select">
               <div className="bg-[#eef2f3]">
                 <div className="py-9">
-                  <p className="text-center text-[25px] w-[180px] m-auto">
+                  <p className="text-center home_select_child z-10 relative text-[25px] w-[180px] m-auto">
                     Select your child's age
                   </p>
                   <ul className="flex mt-6 gap-9 justify-center">
@@ -165,7 +180,7 @@ export default function Home() {
             </div>
           </div>
           <div className="mb-[80px]">
-            <p className="text-center home_desc_cart text-[25px] w-[350px] pb-[50px] m-auto">
+            <p className="text-center home_desc_cart home_generations_underline relative z-10 text-[25px] w-[350px] pb-[50px] m-auto">
               Welcome in our child's world. All our products are made from
               generations with passion.
             </p>
@@ -272,12 +287,51 @@ export default function Home() {
             </Link>
           </div>
           <div className="flex mt-[200px] home_silder_container ">
-            <div className="w-[50%] home_silder_img">
+            <div className="w-[50%] home_silder_img relative">
               <img
                 src="https://themes.muffingroup.com/be/babyshop/wp-content/uploads/2021/10/babyshop-home-pic1.webp"
                 alt=""
                 className="object-cover w-full h-full"
               />
+              <div className="absolute top-[35%] home_silder_text_container w-full m-auto">
+                <h5 className="text-center text-[17px] font-bold">
+                  LIMITED OFFER
+                </h5>
+                <div className="relative">
+                  <h6 className="text-center text-[100px] home_silder_text_sale text-[#ebc989] font-semibold leading-[100px]">
+                    -50%
+                  </h6>
+                  <p className="text-center absolute top-[60px] home_silder_text_holiday left-[50%] text-[60px] w-[200px] translate-x-[-50%] leading-[70px]">
+                    Holiday Sale
+                  </p>
+                  <ul className="absolute gap-[100px] home_silder_text_time flex top-[240px] left-[50%] translate-x-[-50%]">
+                    <li>
+                      <div className="flex flex-col items-center w-[100px] border-b-[2px] pb-3">
+                        <p className="text-[#ebc989] text-[30px]">00</p>
+                        <p className="text-[30px] home_silder_text_time_day">
+                          days
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="flex flex-col items-center w-[100px] border-b-[2px] pb-3">
+                        <p className="text-[#ebc989] text-[30px]">00</p>
+                        <p className="text-[30px] home_silder_text_time_day">
+                          days
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="flex flex-col items-center w-[100px] border-b-[2px] pb-3">
+                        <p className="text-[#ebc989] text-[30px]">00</p>
+                        <p className="text-[30px] home_silder_text_time_day">
+                          days
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
             {/* home slide */}
             <div className="h-auto w-[50%] home_silder_carousel bg-[#eaf0f7]">
@@ -291,10 +345,12 @@ export default function Home() {
                     <span className="text-cyan-500 ml-4">Offers</span>
                   </h2>
                 </div>
+
                 <Carousel
                   draggable={true}
                   dotPosition="bottom"
-                  style={{ height: "46vh", width: "100%" }}>
+                  style={{ height: "46vh", width: "100%" }}
+                  ref={carouselRef}>
                   <div>
                     <div className="flex justify-center items-center flex-col">
                       <div className="w-[38%] home_carousel_img">
@@ -322,7 +378,7 @@ export default function Home() {
                     <div className="flex justify-center items-center flex-col">
                       <div className="w-[38%] home_carousel_img ">
                         <img
-                          src="	https://themes.muffingroup.com/be/babyshop/wp-content/uploads/2021/09/babyshop-giftcart.webp"
+                          src="https://themes.muffingroup.com/be/babyshop/wp-content/uploads/2021/09/babyshop-bebear.webp"
                           alt=""
                           className="w-full h-full object-cover"
                         />
@@ -342,6 +398,22 @@ export default function Home() {
                     </div>
                   </div>
                 </Carousel>
+                <div
+                  className="cursor-pointer carousel_home_prev absolute right-[120px] top-[50%]"
+                  onClick={() => carouselRef.current.prev()}>
+                  <FontAwesomeIcon
+                    icon={faChevronRight}
+                    style={{ fontSize: "40px" }}
+                  />
+                </div>
+                <div
+                  className="cursor-pointer carousel_home_next absolute left-[120px] top-[50%]"
+                  onClick={() => carouselRef.current.next()}>
+                  <FontAwesomeIcon
+                    icon={faChevronLeft}
+                    style={{ fontSize: "40px" }}
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -446,28 +518,98 @@ export default function Home() {
             </div>
           </div>
           {/* home introduce */}
-          <div className="flex justify-center home_introduce mt-[100px]">
-            <div className="w-[60%] home_introduce_imgMain">
+          <div className="flex justify-center cursor-pointer home_introduce mt-[100px]">
+            {/* ảnh main */}
+            <div className="w-[60%] home_introduce_imgMain relative">
               <img
                 src="https://themes.muffingroup.com/be/babyshop/wp-content/uploads/2021/10/babyshop-blog-pic1-1200x900.webp"
                 alt=""
                 className="w-full h-full object-cover"
               />
+              <div className="absolute home_introduce_text bottom-0 w-full pt-3 px-6 pb-6">
+                <div>
+                  <p className="text-gray-200">
+                    <FontAwesomeIcon
+                      icon={faUser}
+                      style={{ marginLeft: "6px", marginRight: "6px" }}
+                    />
+                    <Link to={"/"} className="cursor-pointer hover:underline">
+                      Muffin Group{" "}
+                    </Link>
+                    on
+                    <FontAwesomeIcon
+                      icon={faClock}
+                      style={{ marginLeft: "6px", marginRight: "6px" }}
+                    />
+                    October 11, 2021
+                  </p>
+                  <p className="text-gray-200 home_introduce_text_des text-[30px] my-1">
+                    Tempor diam pede cursus vitae
+                  </p>
+                </div>
+              </div>
             </div>
+
             <div className="w-[30%] home_introduce_img h-auto">
-              <div>
+              {/* ảnh 1 */}
+              <div className="relative home_introduce_imgMain">
                 <img
                   src="https://themes.muffingroup.com/be/babyshop/wp-content/uploads/2021/10/babyshop-blog-pic2-1200x900.webp"
                   alt=""
                   className="w-full h-full object-cover"
                 />
+                <div className="absolute pt-3 home_introduce_text w-full bottom-0 px-6 pb-6">
+                  <div>
+                    <p className="text-gray-200">
+                      <FontAwesomeIcon
+                        icon={faUser}
+                        style={{ marginLeft: "6px", marginRight: "6px" }}
+                      />
+                      <Link to={"/"} className="cursor-pointer hover:underline">
+                        Muffin Group{" "}
+                      </Link>
+                      on
+                      <FontAwesomeIcon
+                        icon={faClock}
+                        style={{ marginLeft: "6px", marginRight: "6px" }}
+                      />
+                      October 11, 2021
+                    </p>
+                    <p className="text-gray-200 text-[20px] home_introduce_text_des my-1">
+                      Mauris nec malesuada fames ac turpis velit
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div>
+              {/* ảnh 2 */}
+              <div className="relative home_introduce_imgMain">
                 <img
                   src="https://themes.muffingroup.com/be/babyshop/wp-content/uploads/2021/10/babyshop-blog-pic3-1200x900.webp"
                   alt=""
                   className="w-full h-full object-cover"
                 />
+                <div className="absolute pt-3 home_introduce_text w-full bottom-0 px-6 pb-6">
+                  <div>
+                    <p className="text-gray-200">
+                      <FontAwesomeIcon
+                        icon={faUser}
+                        style={{ marginLeft: "6px", marginRight: "6px" }}
+                      />
+                      <Link to={"/"} className="cursor-pointer hover:underline">
+                        Muffin Group{" "}
+                      </Link>
+                      on
+                      <FontAwesomeIcon
+                        icon={faClock}
+                        style={{ marginLeft: "6px", marginRight: "6px" }}
+                      />
+                      October 11, 2021
+                    </p>
+                    <p className="text-gray-200 text-[20px] home_introduce_text_des my-1">
+                      Utin laoreet sapien eu amet lorem kebab
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
