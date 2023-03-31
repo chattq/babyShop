@@ -11,6 +11,7 @@
     width: 100%;
     background-color: #ebc989;
   }
+
   .header_hover::after {
     content: "";
     display: none;
@@ -460,6 +461,10 @@
     .modal_inforProduct_infor_name {
       font-size: 22px;
       font-weight: 600;
+    }
+    /* controlTop */
+    .controlTop {
+      display: none;
     }
   }
 }

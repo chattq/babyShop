@@ -10,6 +10,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 import Canvas from "../../components/Canvas";
+import DropDownLoginMenu from "../../components/DropDownLogin/DropDownLoginMenu/DropDownLoginMenu";
 import ModalLogin from "../../components/Modal/ModalLogin";
 import { dataProduct } from "../../dataProduct";
 import CanvasNav from "../../others/CanvasNav";
@@ -145,12 +146,15 @@ export default function Header() {
             </NavLink>
           </div>
           <div className="ml-[4%]">
-            <ul className="flex items-center">
-              <ModalLogin>
-                <li className="mr-7 cursor-pointer">
-                  <FontAwesomeIcon icon={faUser} />
-                </li>
-              </ModalLogin>
+            <ul className="flex relative items-center">
+              <DropDownLoginMenu
+                chidren={
+                  <li className="mr-7 cursor-pointer">
+                    <FontAwesomeIcon icon={faUser} />
+                  </li>
+                }
+                hideDrop={navbar}
+              />
               <li className="mr-7 relative">
                 <FontAwesomeIcon icon={faHeart} />
                 <span className="absolute top-[-8px] right-[-8px] text-white text-[12px] pl-[7px] pr-[6px] rounded-full bg-[#ebc989]">
