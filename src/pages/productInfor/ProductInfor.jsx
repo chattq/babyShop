@@ -126,7 +126,7 @@ export default function ProductInfor() {
               <select
                 className="w-[220px] bg-[aliceblue] rounded-md"
                 onChange={(e) => setCheckSelect(e.target.value)}>
-                <option> Choose an option</option>
+                <option disabled> Choose an option</option>
                 {dataLocal?.age.map((value, index) => (
                   <option value={value}>{value}</option>
                 ))}

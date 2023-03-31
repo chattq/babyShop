@@ -1,5 +1,3 @@
-import { faLock, faUser, faXmark } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useRef, useState } from "react";
 
 export default function FormHelpDesk({ chidren, hideDrop }) {

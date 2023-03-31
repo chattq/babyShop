@@ -5,6 +5,7 @@ const initialState = {
   listCart: [],
   value: 0,
   total: 0,
+  totalQuantity: 0,
 };
 
 export const counterSlice = createSlice({
@@ -33,6 +34,10 @@ export const counterSlice = createSlice({
         (sum, item) => sum + +item?.priceSale * item?.quantity,
         0
       );
+      state.totalQuantity = state.listCart.reduce(
+        (sum, item) => sum + +1 * item?.quantity,
+        0
+      );
     },
     updateQuantity: (state, actions) => {
       const check = state.listCart.findIndex(
@@ -45,6 +50,10 @@ export const counterSlice = createSlice({
         (sum, item) => sum + +item?.priceSale * item?.quantity,
         0
       );
+      state.totalQuantity = state.listCart.reduce(
+        (sum, item) => sum + +1 * item?.quantity,
+        0
+      );
     },
     removeItem(state, actions) {
       state.listCart = state.listCart.filter(
@@ -52,6 +61,10 @@ export const counterSlice = createSlice({
       );
       state.total = state.listCart.reduce(
         (sum, item) => sum + +item?.priceSale * item?.quantity,
+        0
+      );
+      state.totalQuantity = state.listCart.reduce(
+        (sum, item) => sum + +1 * item?.quantity,
         0
       );
     },

@@ -17,7 +17,7 @@ import { formatMoney } from "../../others/formatMoney";
 export default function Header() {
   const countHeart = useSelector((state) => state.counter.value);
   const total = useSelector((state) => state.counter.total);
-  const numberProductCart = useSelector((state) => state.counter.listCart);
+  const numberProductCart = useSelector((state) => state.counter.totalQuantity);
   const [navbar, setNavbar] = useState(false);
 
   const changeHeader = () => {
@@ -163,7 +163,7 @@ export default function Header() {
                 <Canvas>
                   <FontAwesomeIcon icon={faCartShopping} />
                   <span className="absolute top-[-8px] right-[-8px] text-white text-[12px] pl-[7px] pr-[6px] rounded-full bg-[#ebc989]">
-                    {numberProductCart?.length}
+                    {numberProductCart}
                   </span>
                 </Canvas>
               </li>

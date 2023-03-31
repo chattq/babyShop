@@ -12,6 +12,7 @@ import "react-modern-drawer/dist/index.css";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import Canvas from "../components/Canvas";
+import CanvasLogin from "../components/CanvasLogin";
 import { formatMoney } from "./formatMoney";
 
 export default function CanvasNav({ children }) {
@@ -51,10 +52,12 @@ export default function CanvasNav({ children }) {
                 <div className="ml-[4%]">
                   <ul className="flex justify-center flex-wrap">
                     <li className="mr-6 ">
-                      <FontAwesomeIcon
-                        icon={faUser}
-                        style={{ color: "white" }}
-                      />
+                      <CanvasLogin>
+                        <FontAwesomeIcon
+                          icon={faUser}
+                          style={{ color: "white" }}
+                        />
+                      </CanvasLogin>
                     </li>
                     <li className="mr-4 relative">
                       <FontAwesomeIcon

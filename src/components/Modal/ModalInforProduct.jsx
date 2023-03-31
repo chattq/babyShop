@@ -133,7 +133,7 @@ export default function ModalInforProduct({ children, data }) {
                 <select
                   className="w-[220px] bg-[aliceblue] rounded-md"
                   onChange={(e) => setCheckSelect(e.target.value)}>
-                  <option> Choose an option</option>
+                  <option disabled> Choose an option</option>
                   {data?.age.map((value, index) => (
                     <option value={value}>{value}</option>
                   ))}
