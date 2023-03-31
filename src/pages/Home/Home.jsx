@@ -70,7 +70,7 @@ export default function Home() {
   const imageRef = useRef();
   return (
     <>
-      <div className="bg-white home_box mb-[570px]">
+      <div className="bg-white home_box">
         <div className="w-[88%] home_container m-auto">
           <div className="flex pt-10 home_carousel_header gap-6 justify-center">
             <div className="w-[60%] home_carousel_header_container">

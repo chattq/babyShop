@@ -1,8 +1,9 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { formatMoney } from "../../others/formatMoney";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faChevronDown,
   faGear,
   faMinus,
   faPlus,
@@ -61,7 +62,13 @@ export default function ProductInfor() {
   const handleHeight = (value) => {
     setCheckHeight(value);
   };
-
+  const scrollToElement = useRef(null);
+  const goToElement = () => {
+    window.scrollTo({
+      top: scrollToElement.current.offsetTop,
+      behavior: "smooth",
+    });
+  };
   return (
     <>
       <div className="bg-[#fcfcfc] pb-[50px] productInfor_box">
@@ -531,7 +538,7 @@ export default function ProductInfor() {
               </div>
             </div>
             {/* item 2 */}
-            <div className="flex pb-[80px] productInfo_vesti justify-between mt-[150px]">
+            <div className="flex pb-[30px] productInfo_vesti justify-between mt-[150px]">
               <div className="productInfo_vesti_infor">
                 <h4 className="text-[14px] mb-3 font-bold text-[#ebc989]">
                   PHASELLUS TORTOR
@@ -553,10 +560,18 @@ export default function ProductInfor() {
                 />
               </div>
             </div>
+            <div
+              className="text-center cursor-pointer pb-[40px]"
+              onClick={goToElement}>
+              <FontAwesomeIcon
+                icon={faChevronDown}
+                style={{ fontSize: "40px", color: "gray" }}
+              />
+            </div>
           </div>
         </div>
         {/*  */}
-        <div className="flex justify-center">
+        <div className="flex justify-center" ref={scrollToElement}>
           <div className="pt-[100px] productInfor_compare_container m-auto w-[70%]">
             <div className="productInfor_compare">
               <h1 className="text-center productInfor_compare_underLine text-[50px] w-[300px] m-auto">
