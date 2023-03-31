@@ -30,7 +30,9 @@ export default function ModalInforProduct({ children, data }) {
     setProduct(data);
   }, [product]);
   const [image, setImage] = useState(data.imageMain);
-  const [checkColor, setCheckColor] = useState(data?.color[0]);
+  const [checkColor, setCheckColor] = useState();
+  const [checkHeight, setCheckHeight] = useState();
+  const [checkSelect, setCheckSelect] = useState();
   const dispatch = useDispatch();
   const [quantity1, setQuantity] = useState(0);
   const sentDataCart = (item) => {
@@ -52,6 +54,12 @@ export default function ModalInforProduct({ children, data }) {
   };
   const handleColor = (value) => {
     setCheckColor(value);
+  };
+  const handleHeight = (value) => {
+    setCheckHeight(value);
+  };
+  const handleSelect = (value) => {
+    setCheckSelect(value);
   };
   return (
     <>
@@ -103,6 +111,36 @@ export default function ModalInforProduct({ children, data }) {
                   <span className="text-[18px] ml-3">Sizes chart</span>
                 </ModalSize>
               </div>
+              {/* height */}
+              <div className="flex items-center border-b-[rgba(0,0,0,.04)] flex-wrap border-b-[1px] pb-3 pt-2">
+                <div className="font-semibold mr-[60px] mb-2">Height</div>
+                <ul className="flex items-center gap-2 productInfor_height">
+                  {data?.height.map((value, index) => (
+                    <li
+                      key={index}
+                      className={
+                        checkHeight === value
+                          ? "border border-black h-[35px] w-[40px] text-center flex items-center justify-center rounded-md"
+                          : "border border-[rgba(0,0,0,.1] h-[35px] w-[40px] flex items-center justify-center rounded-md"
+                      }
+                      onClick={() => handleHeight(value)}>
+                      <span>{value}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              {/* age */}
+              <div className="flex items-center border-b-[rgba(0,0,0,.04)] flex-wrap border-b-[1px] py-3">
+                <div className="font-semibold mr-[60px]">Age</div>
+                <select
+                  className="w-[220px] bg-[aliceblue] rounded-md"
+                  onChange={handleSelect}>
+                  <option> Choose an option</option>
+                  {data?.age.map((value, index) => (
+                    <option value={index}>{value}</option>
+                  ))}
+                </select>
+              </div>
               <div className="flex items-center mt-6">
                 <div className="font-semibold mr-[70px]">Color</div>
                 {data.color.map((value, index) => (
@@ -139,14 +177,14 @@ export default function ModalInforProduct({ children, data }) {
                     <FontAwesomeIcon icon={faPlus} />
                   </span>
                 </div>
-                {quantity1 !== 0 ? (
+                {checkColor && checkHeight && checkSelect !== undefined ? (
                   <button
-                    className="bg-[#8a8c8e] w-full cursor-pointer text-center rounded font-bold text-white"
+                    className="bg-[#8a8c8e] w-full cursor-pointer text-center rounded font-bold text-white  py-3"
                     onClick={() => sentDataCart(data)}>
                     Add to cart
                   </button>
                 ) : (
-                  <Tooltip title="Vui lòng nhập số lượng">
+                  <Tooltip title="Vui lòng chọn option">
                     <button
                       disabled
                       className="bg-[#8a8c8e] w-full cursor-pointer text-center rounded font-bold text-white  py-3">

@@ -14,7 +14,7 @@ import { addToCart } from "../../features/counter/counterSlice";
 import ProductSales from "../../components/ProductSales";
 import { dataProduct } from "../../dataProduct";
 import ModalSize from "../../components/Modal/ModalSize";
-import { Tooltip } from "antd";
+import { Select, Tooltip } from "antd";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
@@ -31,7 +31,9 @@ export default function ProductInfor() {
     }
   }, [dataLocal.imageMain]);
 
-  const [checkColor, setCheckColor] = useState(dataLocal?.color[0]);
+  const [checkColor, setCheckColor] = useState();
+  const [checkHeight, setCheckHeight] = useState();
+  const [checkSelect, setCheckSelect] = useState();
   const dispatch = useDispatch();
   const [quantity1, setQuantity] = useState(1);
   const sentDataCart = (item) => {
@@ -53,6 +55,12 @@ export default function ProductInfor() {
   };
   const handleColor = (value) => {
     setCheckColor(value);
+  };
+  const handleHeight = (value) => {
+    setCheckHeight(value);
+  };
+  const handleSelect = (value) => {
+    setCheckSelect(value);
   };
   return (
     <>
@@ -87,7 +95,39 @@ export default function ProductInfor() {
                 {formatMoney(dataLocal.priceSale)}
               </span>
             </div>
-            <div className="flex items-center">
+            {/* height */}
+            <div className="flex items-center border-b-[rgba(0,0,0,.04)] flex-wrap border-b-[1px] pb-3">
+              <div className="font-semibold mr-[60px]">Height</div>
+              <ul className="flex items-center gap-2 productInfor_height">
+                {dataLocal?.height.map((value, index) => (
+                  <li
+                    key={index}
+                    className={
+                      checkHeight === value
+                        ? "border border-black h-[35px] w-[40px] text-center flex items-center justify-center rounded-md"
+                        : "border border-[rgba(0,0,0,.1] h-[35px] w-[40px] flex items-center justify-center rounded-md"
+                    }
+                    onClick={() => handleHeight(value)}>
+                    <span>{value}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            {/* age */}
+            <div className="flex items-center border-b-[rgba(0,0,0,.04)] flex-wrap border-b-[1px] py-3">
+              <div className="font-semibold mr-[60px]">Age</div>
+              <select
+                className="w-[220px] bg-[aliceblue] rounded-md"
+                onChange={handleSelect}>
+                <option> Choose an option</option>
+                {dataLocal?.age.map((value, index) => (
+                  <option value={index}>{value}</option>
+                ))}
+              </select>
+            </div>
+
+            {/* color */}
+            <div className="flex items-center pt-3">
               <div className="font-semibold mr-[70px]">Color</div>
               {dataLocal.color.map((value, index) => (
                 <div
@@ -123,14 +163,14 @@ export default function ProductInfor() {
                   <FontAwesomeIcon icon={faPlus} />
                 </span>
               </div>
-              {quantity1 !== -2 ? (
+              {checkColor && checkHeight && checkSelect !== undefined ? (
                 <button
                   className="bg-[#8a8c8e] w-full cursor-pointer text-center rounded font-bold text-white  py-3"
                   onClick={() => sentDataCart(dataLocal)}>
                   Add to cart
                 </button>
               ) : (
-                <Tooltip title="Vui lòng nhập số lượng">
+                <Tooltip title="Vui lòng chọn option">
                   <button
                     disabled
                     className="bg-[#8a8c8e] w-full cursor-pointer text-center rounded font-bold text-white  py-3">
