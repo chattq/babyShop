@@ -17,10 +17,12 @@ import { formatMoney } from "../others/formatMoney";
 import { setProductToLS } from "../others/localAction";
 import ImageChangeHover from "./ChangeImg/ImageChangeHover";
 import ModalInforProduct from "./Modal/ModalInforProduct";
+import BackToTopButton from "./BackToTopButton/BackToTopButton";
 
 export default function ProductSales({ dataProduct, checkGPS }) {
   const [product, setProduct] = useState(dataProduct);
   const dispatch = useDispatch();
+  const [top, setTop] = useState();
   // like
   const handleIncrementHeart = (item) => {
     let index = product.findIndex((index) => index.id === item.id);
@@ -55,11 +57,11 @@ export default function ProductSales({ dataProduct, checkGPS }) {
   const handleProductDetail = (item) => {
     dispatch(getProduct(item));
     setProductToLS(item);
-  };
-  const handleProductDetailA = (item) => {
-    dispatch(getProduct(item));
-    setProductToLS(item);
-    window.location.href = "";
+    if (checkGPS === true) {
+      setTop(false);
+    } else {
+      setTop(true);
+    }
   };
   return (
     <div className="mt-[50px] home_sale_container">
@@ -70,26 +72,63 @@ export default function ProductSales({ dataProduct, checkGPS }) {
             .map((item) => (
               <div className="w-[20%] home_cart" key={item.id}>
                 <div className="card_home relative">
-                  <Link
-                    onClick={() => handleProductDetail(item)}
-                    to={"/productInfor"}
-                    className="ease-in-out">
-                    <ImageChangeHover
-                      primaryImg={item.imageMain}
-                      secondaryImg={item.image[1]}
-                      alt=""
-                    />
-                  </Link>
-                  <div className="card_home_nav text-black px-6 flex items-center justify-between overflow-hidden">
+                  {checkGPS ? (
                     <Link
                       onClick={() => handleProductDetail(item)}
                       to={"/productInfor"}
-                      className="hover:text-[#ebc989]">
-                      <FontAwesomeIcon
-                        icon={faLink}
-                        style={{ fontSize: "20px" }}
+                      className="ease-in-out">
+                      <ImageChangeHover
+                        primaryImg={item.imageMain}
+                        secondaryImg={item.image[1]}
+                        alt=""
                       />
                     </Link>
+                  ) : (
+                    <BackToTopButton
+                      children={
+                        <Link
+                          onClick={() => handleProductDetail(item)}
+                          to={"/productInfor"}
+                          className="ease-in-out">
+                          <ImageChangeHover
+                            primaryImg={item.imageMain}
+                            secondaryImg={item.image[1]}
+                            alt=""
+                          />
+                        </Link>
+                      }
+                      checkGPS={top}
+                    />
+                  )}
+
+                  <div className="card_home_nav text-black px-6 flex items-center justify-between overflow-hidden">
+                    {checkGPS ? (
+                      <Link
+                        onClick={() => handleProductDetail(item)}
+                        to={"/productInfor"}
+                        className="hover:text-[#ebc989]">
+                        <FontAwesomeIcon
+                          icon={faLink}
+                          style={{ fontSize: "20px" }}
+                        />
+                      </Link>
+                    ) : (
+                      <BackToTopButton
+                        children={
+                          <Link
+                            onClick={() => handleProductDetail(item)}
+                            to={"/productInfor"}
+                            className="hover:text-[#ebc989]">
+                            <FontAwesomeIcon
+                              icon={faLink}
+                              style={{ fontSize: "20px" }}
+                            />
+                          </Link>
+                        }
+                        checkGPS={top}
+                      />
+                    )}
+
                     {item.like ? (
                       <div
                         className="hover:text-[#ebc989]"

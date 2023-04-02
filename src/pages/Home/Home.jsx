@@ -117,7 +117,7 @@ export default function Home() {
             <div className="w-[30%] home_header_select">
               <div className="bg-[#eef2f3]">
                 <div className="py-9">
-                  <p className="text-center home_select_child z-10 relative text-[25px] w-[180px] m-auto">
+                  <p className="text-center home_select_child z-1 relative text-[25px] w-[180px] m-auto">
                     Select your child's age
                   </p>
                   <ul className="flex mt-6 gap-9 justify-center">

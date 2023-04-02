@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 
-export default function BackToTopButton({ children }) {
+export default function BackToTopButton({ children, checkGPS }) {
   const [backToTopButton, setBackToTopButton] = useState(false);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 100) {
+      if (window.scrollY > 200) {
         setBackToTopButton(true);
       } else {
         setBackToTopButton(false);
@@ -15,7 +15,7 @@ export default function BackToTopButton({ children }) {
 
   const scrollUp = () => {
     window.scrollTo({
-      top: 0,
+      top: 180,
       behavior: "smooth",
     });
   };
