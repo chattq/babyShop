@@ -641,6 +641,10 @@
   .header_icon_res li {
     margin-right: 28px;
   }
+  .header_logo_container,
+  .header_nav_res {
+    width: 80%;
+  }
 }
 
 * {

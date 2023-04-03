@@ -49,7 +49,7 @@ export default function Header() {
         className={
           navbar
             ? "header_logo_container_fix header_logo_container"
-            : "h-[100px] w-[80%] m-auto header_logo_container flex items-center border-b-[1px] border-[rgba(0,0,0,.08)]"
+            : "h-[100px] w-[62%] m-auto header_logo_container flex items-center border-b-[1px] border-[rgba(0,0,0,.08)]"
         }>
         <div className="w-[220px] m-auto header_logo_img">
           <Link to={"/"}>
@@ -73,7 +73,7 @@ export default function Header() {
             ? "fixed w-full z-[99] bg-white top-0 header_nav"
             : "bg-white header_nav"
         }>
-        <div className="flex items-center  h-[60px] w-[80%] m-auto justify-end">
+        <div className="flex items-center header_nav_res  h-[60px] w-[62%] m-auto justify-end">
           {navbar ? (
             <div className="w-[150px] m-auto ">
               <Link to={"/"}>
@@ -92,8 +92,8 @@ export default function Header() {
               to={"/"}
               className={({ isActive }) =>
                 isActive
-                  ? "text-[#ebc989] nav_active relative leading-[60px] px-4 mr-[40px]"
-                  : "text-[#2a2b39] leading-[60px] relative px-4 mr-[40px] header_hover"
+                  ? "text-[#ebc989] nav_active relative leading-[60px] px-4 mr-[30px]"
+                  : "text-[#2a2b39] leading-[60px] relative px-4 mr-[30px] header_hover"
               }>
               HOME
             </NavLink>
@@ -101,8 +101,8 @@ export default function Header() {
               to={"/productInfor"}
               className={({ isActive }) =>
                 isActive
-                  ? "text-[#ebc989] nav_active relative mr-[40px] leading-[60px] px-4"
-                  : "text-[#2a2b39] leading-[60px] mr-[40px] relative px-4 header_hover"
+                  ? "text-[#ebc989] nav_active relative mr-[30px] leading-[60px] px-4"
+                  : "text-[#2a2b39] leading-[60px] mr-[30px] relative px-4 header_hover"
               }>
               OUR PRODUCT
             </NavLink>
@@ -110,8 +110,8 @@ export default function Header() {
               to={"/aboutUs"}
               className={({ isActive }) =>
                 isActive
-                  ? "text-[#ebc989] nav_active relative mr-[40px] leading-[60px] px-4"
-                  : "text-[#2a2b39] leading-[60px] mr-[40px] relative px-4 header_hover"
+                  ? "text-[#ebc989] nav_active relative mr-[30px] leading-[60px] px-4"
+                  : "text-[#2a2b39] leading-[60px] mr-[30px] relative px-4 header_hover"
               }>
               ABOUT US
             </NavLink>
@@ -119,8 +119,8 @@ export default function Header() {
               to={"/blog"}
               className={({ isActive }) =>
                 isActive
-                  ? "text-[#ebc989] nav_active relative mr-[40px] leading-[60px] px-4"
-                  : "text-[#2a2b39] leading-[60px] mr-[40px] relative px-4 header_hover"
+                  ? "text-[#ebc989] nav_active relative mr-[30px] leading-[60px] px-4"
+                  : "text-[#2a2b39] leading-[60px] mr-[30px] relative px-4 header_hover"
               }>
               BLOG
             </NavLink>
@@ -128,8 +128,8 @@ export default function Header() {
               to={"/clienCenter"}
               className={({ isActive }) =>
                 isActive
-                  ? "text-[#ebc989] nav_active relative mr-[40px] leading-[60px] px-4"
-                  : "text-[#2a2b39] leading-[60px] px-4 mr-[40px] relative header_hover"
+                  ? "text-[#ebc989] nav_active relative mr-[30px] leading-[60px] px-4"
+                  : "text-[#2a2b39] leading-[60px] px-4 mr-[30px] relative header_hover"
               }>
               CLIENT CENTER
             </NavLink>
@@ -137,27 +137,27 @@ export default function Header() {
               to={"/faq"}
               className={({ isActive }) =>
                 isActive
-                  ? "text-[#ebc989] nav_active relative mr-[40px] leading-[60px] px-4"
-                  : "text-[#2a2b39] leading-[60px] px-4 mr-[40px] relative header_hover"
+                  ? "text-[#ebc989] nav_active relative mr-[30px] leading-[60px] px-4"
+                  : "text-[#2a2b39] leading-[60px] px-4 mr-[30px] relative header_hover"
               }>
               FAQ
             </NavLink>
           </div>
           <div className="ml-[3%]">
             <ul className="flex relative header_icon_res items-center">
-              <li className="mr-10 cursor-pointer">
+              <li className="mr-7 cursor-pointer">
                 <DropDownLoginMenu
                   chidren={<FontAwesomeIcon icon={faUser} />}
                   hideDrop={navbar}
                 />
               </li>
-              <li className="mr-10 relative">
+              <li className="mr-7 relative">
                 <FontAwesomeIcon icon={faHeart} />
                 <span className="absolute top-[-8px] right-[-8px] text-white text-[12px] pl-[7px] pr-[6px] rounded-full bg-[#ebc989]">
                   {countHeart}
                 </span>
               </li>
-              <li className="mr-10 relative">
+              <li className="mr-7 relative">
                 <Canvas>
                   <FontAwesomeIcon icon={faCartShopping} />
                   <span className="absolute top-[-8px] right-[-8px] text-white text-[12px] pl-[7px] pr-[6px] rounded-full bg-[#ebc989]">
@@ -165,7 +165,7 @@ export default function Header() {
                   </span>
                 </Canvas>
               </li>
-              <li className="mr-12">{formatMoney(total)}</li>
+              <li className="mr-7">{formatMoney(total)}</li>
               <li>
                 <FontAwesomeIcon icon={faMagnifyingGlass} />
               </li>
