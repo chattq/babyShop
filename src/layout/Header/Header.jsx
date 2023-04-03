@@ -92,8 +92,8 @@ export default function Header() {
               to={"/"}
               className={({ isActive }) =>
                 isActive
-                  ? "text-[#ebc989] nav_active relative leading-[60px] px-4 mr-[30px]"
-                  : "text-[#2a2b39] leading-[60px] relative px-4 mr-[30px] header_hover"
+                  ? "text-[#ebc989] nav_active relative leading-[60px] px-4 mr-[20px]"
+                  : "text-[#2a2b39] leading-[60px] relative px-4 mr-[20px] header_hover"
               }>
               HOME
             </NavLink>
@@ -101,8 +101,8 @@ export default function Header() {
               to={"/productInfor"}
               className={({ isActive }) =>
                 isActive
-                  ? "text-[#ebc989] nav_active relative mr-[30px] leading-[60px] px-4"
-                  : "text-[#2a2b39] leading-[60px] mr-[30px] relative px-4 header_hover"
+                  ? "text-[#ebc989] nav_active relative mr-[20px] leading-[60px] px-4"
+                  : "text-[#2a2b39] leading-[60px] mr-[20px] relative px-4 header_hover"
               }>
               OUR PRODUCT
             </NavLink>
@@ -110,8 +110,8 @@ export default function Header() {
               to={"/aboutUs"}
               className={({ isActive }) =>
                 isActive
-                  ? "text-[#ebc989] nav_active relative mr-[30px] leading-[60px] px-4"
-                  : "text-[#2a2b39] leading-[60px] mr-[30px] relative px-4 header_hover"
+                  ? "text-[#ebc989] nav_active relative mr-[20px] leading-[60px] px-4"
+                  : "text-[#2a2b39] leading-[60px] mr-[20px] relative px-4 header_hover"
               }>
               ABOUT US
             </NavLink>
@@ -119,8 +119,8 @@ export default function Header() {
               to={"/blog"}
               className={({ isActive }) =>
                 isActive
-                  ? "text-[#ebc989] nav_active relative mr-[30px] leading-[60px] px-4"
-                  : "text-[#2a2b39] leading-[60px] mr-[30px] relative px-4 header_hover"
+                  ? "text-[#ebc989] nav_active relative mr-[20px] leading-[60px] px-4"
+                  : "text-[#2a2b39] leading-[60px] mr-[20px] relative px-4 header_hover"
               }>
               BLOG
             </NavLink>
@@ -128,8 +128,8 @@ export default function Header() {
               to={"/clienCenter"}
               className={({ isActive }) =>
                 isActive
-                  ? "text-[#ebc989] nav_active relative mr-[30px] leading-[60px] px-4"
-                  : "text-[#2a2b39] leading-[60px] px-4 mr-[30px] relative header_hover"
+                  ? "text-[#ebc989] nav_active relative mr-[20px] leading-[60px] px-4"
+                  : "text-[#2a2b39] leading-[60px] px-4 mr-[20px] relative header_hover"
               }>
               CLIENT CENTER
             </NavLink>
@@ -137,8 +137,8 @@ export default function Header() {
               to={"/faq"}
               className={({ isActive }) =>
                 isActive
-                  ? "text-[#ebc989] nav_active relative mr-[30px] leading-[60px] px-4"
-                  : "text-[#2a2b39] leading-[60px] px-4 mr-[30px] relative header_hover"
+                  ? "text-[#ebc989] nav_active relative mr-[20px] leading-[60px] px-4"
+                  : "text-[#2a2b39] leading-[60px] px-4 mr-[20px] relative header_hover"
               }>
               FAQ
             </NavLink>
