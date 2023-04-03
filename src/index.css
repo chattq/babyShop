@@ -163,6 +163,7 @@
     width: 100%;
     z-index: 1;
     display: none;
+    overflow: hidden;
   }
   .bed_sets:hover.bed_sets::after,
   .Sleepwear:hover.Sleepwear::after,
@@ -175,6 +176,7 @@
     display: block;
     top: 60px;
     transition: all 0.3s ease-out;
+    overflow: hidden;
   }
 
   @media only screen and (max-width: 486.4px) {

@@ -157,29 +157,29 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-[100px]">
-            <div className="flex flex-wrap gap-6 justify-center">
-              <div className="px-[100px] text-[20px] py-[20px] bed_sets relative">
+            <div className="flex gap-6 w-[90%] m-auto flex-wrap justify-center">
+              <div className="px-[90px] text-[20px] py-[20px] bed_sets relative">
                 Bed Sets
               </div>
-              <div className="px-[100px] text-[20px] py-[20px] Sleepwear relative">
+              <div className="px-[90px] text-[20px] py-[20px] Sleepwear relative">
                 Sleepwear
               </div>
-              <div className="px-[100px] text-[20px] py-[20px] Pyjamas relative ">
+              <div className="px-[90px] text-[20px] py-[20px] Pyjamas relative ">
                 Pyjamas
               </div>
-              <div className="px-[100px] text-[20px] py-[20px] Nighties relative">
+              <div className="px-[90px] text-[20px] py-[20px] Nighties relative">
                 Nighties
               </div>
-              <div className="px-[100px] text-[20px] py-[20px] Bathrobes relative left-[10px]">
+              <div className="px-[90px] text-[20px] py-[20px] Bathrobes relative left-[10px]">
                 Bathrobes
               </div>
-              <div className="px-[100px] text-[20px] py-[20px] Classic relative left-[10px]">
+              <div className="px-[90px] text-[20px] py-[20px] Classic relative left-[10px]">
                 Classic
               </div>
-              <div className="px-[100px] text-[20px] py-[20px] Fancy relative left-[38px]">
+              <div className="px-[90px] text-[20px] py-[20px] Fancy relative left-[38px]">
                 Fancy
               </div>
-              <div className="px-[100px] text-[20px] py-[20px] text-center  More_products relative left-[25px]">
+              <div className="px-[90px] text-[20px] py-[20px] text-center  More_products relative left-[25px]">
                 More products
               </div>
             </div>
