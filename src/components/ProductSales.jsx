@@ -73,16 +73,18 @@ export default function ProductSales({ dataProduct, checkGPS }) {
               <div className="w-[20%] home_cart" key={item.id}>
                 <div className="card_home relative">
                   {checkGPS ? (
-                    <Link
-                      onClick={() => handleProductDetail(item)}
-                      to={"/productInfor"}
-                      className="ease-in-out">
-                      <ImageChangeHover
-                        primaryImg={item.imageMain}
-                        secondaryImg={item.image[1]}
-                        alt=""
-                      />
-                    </Link>
+                    <BackToTopButton>
+                      <Link
+                        onClick={() => handleProductDetail(item)}
+                        to={"/productInfor"}
+                        className="ease-in-out">
+                        <ImageChangeHover
+                          primaryImg={item.imageMain}
+                          secondaryImg={item.image[1]}
+                          alt=""
+                        />
+                      </Link>
+                    </BackToTopButton>
                   ) : (
                     <BackToTopButton
                       children={
@@ -103,15 +105,17 @@ export default function ProductSales({ dataProduct, checkGPS }) {
 
                   <div className="card_home_nav text-black px-6 flex items-center justify-between overflow-hidden">
                     {checkGPS ? (
-                      <Link
-                        onClick={() => handleProductDetail(item)}
-                        to={"/productInfor"}
-                        className="hover:text-[#ebc989]">
-                        <FontAwesomeIcon
-                          icon={faLink}
-                          style={{ fontSize: "20px" }}
-                        />
-                      </Link>
+                      <BackToTopButton>
+                        <Link
+                          onClick={() => handleProductDetail(item)}
+                          to={"/productInfor"}
+                          className="hover:text-[#ebc989]">
+                          <FontAwesomeIcon
+                            icon={faLink}
+                            style={{ fontSize: "20px" }}
+                          />
+                        </Link>
+                      </BackToTopButton>
                     ) : (
                       <BackToTopButton
                         children={
