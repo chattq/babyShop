@@ -158,29 +158,33 @@ export default function Home() {
           </div>
           <div className="mt-[100px]">
             <div className="flex gap-6 flex-wrap w-[90%] m-auto justify-center">
-              <div className="px-[90px] text-[20px] py-[20px] bed_sets relative">
-                Bed Sets
+              <div className="flex">
+                <div className="px-[90px] text-[20px] py-[20px] bed_sets relative">
+                  Bed Sets
+                </div>
+                <div className="px-[90px] text-[20px] py-[20px] Sleepwear relative">
+                  Sleepwear
+                </div>
+                <div className="px-[90px] text-[20px] py-[20px] Pyjamas relative ">
+                  Pyjamas
+                </div>
+                <div className="px-[90px] text-[20px] py-[20px] Nighties relative">
+                  Nighties
+                </div>
               </div>
-              <div className="px-[90px] text-[20px] py-[20px] Sleepwear relative">
-                Sleepwear
-              </div>
-              <div className="px-[90px] text-[20px] py-[20px] Pyjamas relative ">
-                Pyjamas
-              </div>
-              <div className="px-[90px] text-[20px] py-[20px] Nighties relative">
-                Nighties
-              </div>
-              <div className="px-[90px] text-[20px] py-[20px] Bathrobes relative left-[10px]">
-                Bathrobes
-              </div>
-              <div className="px-[90px] text-[20px] py-[20px] Classic relative left-[10px]">
-                Classic
-              </div>
-              <div className="px-[90px] text-[20px] py-[20px] Fancy relative left-[38px]">
-                Fancy
-              </div>
-              <div className="px-[90px] text-[20px] py-[20px] text-center More_products relative left-[25px]">
-                More products
+              <div className="flex">
+                <div className="px-[90px] text-[20px] py-[20px] Bathrobes relative left-[10px]">
+                  Bathrobes
+                </div>
+                <div className="px-[90px] text-[20px] py-[20px] Classic relative left-[10px]">
+                  Classic
+                </div>
+                <div className="px-[90px] text-[20px] py-[20px] Fancy relative left-[38px]">
+                  Fancy
+                </div>
+                <div className="px-[90px] text-[20px] py-[20px] text-center More_products relative left-[25px]">
+                  More products
+                </div>
               </div>
             </div>
           </div>
