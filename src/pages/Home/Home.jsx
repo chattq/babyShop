@@ -158,14 +158,28 @@ export default function Home() {
           </div>
           <div className="mt-[100px]">
             <div className="flex flex-wrap gap-6 justify-center">
-              <div className="px-[100px] text-[20px] py-[20px]">Bed Sets</div>
-              <div className="px-[100px] text-[20px] py-[20px]">Sleepwear</div>
-              <div className="px-[100px] text-[20px] py-[20px]">Pyjamas</div>
-              <div className="px-[100px] text-[20px] py-[20px]">Nighties</div>
-              <div className="px-[100px] text-[20px] py-[20px]">Bathrobes</div>
-              <div className="px-[100px] text-[20px] py-[20px]">Classic</div>
-              <div className="px-[100px] text-[20px] py-[20px]">Fancy</div>
-              <div className="px-[100px] text-[20px] py-[20px] text-center">
+              <div className="px-[100px] text-[20px] py-[20px] bed_sets relative">
+                Bed Sets
+              </div>
+              <div className="px-[100px] text-[20px] py-[20px] Sleepwear relative">
+                Sleepwear
+              </div>
+              <div className="px-[100px] text-[20px] py-[20px] Pyjamas relative ">
+                Pyjamas
+              </div>
+              <div className="px-[100px] text-[20px] py-[20px] Nighties relative">
+                Nighties
+              </div>
+              <div className="px-[100px] text-[20px] py-[20px] Bathrobes relative">
+                Bathrobes
+              </div>
+              <div className="px-[100px] text-[20px] py-[20px] Classic relative">
+                Classic
+              </div>
+              <div className="px-[100px] text-[20px] py-[20px] Fancy relative">
+                Fancy
+              </div>
+              <div className="px-[100px] text-[20px] py-[20px] text-center  More_products relative">
                 More products
               </div>
             </div>
@@ -528,7 +542,7 @@ export default function Home() {
               />
               <div className="absolute home_introduce_text bottom-0 w-full pt-3 px-6 pb-6">
                 <div>
-                  <p className="text-gray-200">
+                  <p className="text-white">
                     <FontAwesomeIcon
                       icon={faUser}
                       style={{ marginLeft: "6px", marginRight: "6px" }}
@@ -556,11 +570,11 @@ export default function Home() {
                 <img
                   src="https://themes.muffingroup.com/be/babyshop/wp-content/uploads/2021/10/babyshop-blog-pic2-1200x900.webp"
                   alt=""
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover img"
                 />
                 <div className="absolute pt-3 home_introduce_text w-full bottom-0 px-6 pb-6">
                   <div>
-                    <p className="text-gray-200">
+                    <p className="text-white">
                       <FontAwesomeIcon
                         icon={faUser}
                         style={{ marginLeft: "6px", marginRight: "6px" }}

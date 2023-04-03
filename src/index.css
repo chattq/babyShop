@@ -86,14 +86,10 @@
   .modal_InforProduct {
     width: 960px !important;
   }
-  .home_introduce_imgMain {
-    transition: all 0.3s ease-in-out;
-  }
-
   .home_introduce_imgMain:hover .home_introduce_text,
   .home_introduce_img1:hover .home_introduce_text {
     bottom: 30px;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-out;
   }
   .home_introduce_text::after {
     content: "";
@@ -107,12 +103,61 @@
   }
   .home_introduce_text {
     bottom: 0;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgb(85, 82, 82));
+    /* background: linear-gradient(
+      90deg,
+      rgba(161, 158, 158, 0.215),
+      rgba(161, 158, 158, 0.215)
+    ); */
   }
   .home_introduce_imgMain:hover .home_introduce_text::after,
   .home_introduce_img1:hover .home_introduce_text::after {
     width: 100px;
   }
+  .bed_sets:hover,
+  .Sleepwear:hover,
+  .Pyjamas:hover,
+  .Nighties:hover,
+  .Bathrobes:hover,
+  .Classic:hover,
+  .Fancy:hover,
+  .More_products:hover {
+    cursor: pointer;
+    transition-delay: 250ms;
+    transform: translateY(-30px);
+    transition: all 0.3s ease-out;
+  }
+  .bed_sets::after,
+  .Sleepwear::after,
+  .Pyjamas::after,
+  .Nighties::after,
+  .Bathrobes::after,
+  .Classic::after,
+  .Fancy::after,
+  .More_products::after {
+    content: "";
+    position: absolute;
+    background-image: url("https://banner2.cleanpng.com/20181202/jwy/kisspng-arrow-portable-network-graphics-computer-icons-cli-arrow-svg-png-icon-free-download-148297-onlin-5c045d3a202635.0572775015437898821317.jpg");
+    background-size: 10%;
+    background-repeat: no-repeat;
+    height: 60px;
+    left: 45%;
+    width: 100%;
+    z-index: 1;
+    display: none;
+  }
+  .bed_sets:hover.bed_sets::after,
+  .Sleepwear:hover.Sleepwear::after,
+  .Pyjamas:hover.Pyjamas::after,
+  .Nighties:hover.Nighties::after,
+  .Bathrobes:hover.Bathrobes::after,
+  .Classic:hover.Classic::after,
+  .Fancy:hover.Fancy::after,
+  .More_products:hover.More_products::after {
+    display: block;
+    top: 60px;
+    transition: all 0.3s ease-out;
+  }
+
   @media only screen and (max-width: 486.4px) {
     /* LayoutPage */
     .LayoutPage {

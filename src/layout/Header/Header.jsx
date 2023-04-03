@@ -70,7 +70,7 @@ export default function Header() {
       <div
         className={
           navbar
-            ? "fixed w-full z-10 bg-white top-0 header_nav"
+            ? "fixed w-full z-[99] bg-white top-0 header_nav"
             : "bg-white header_nav"
         }>
         <div className="flex items-center  h-[60px] w-[80%] m-auto justify-end">
