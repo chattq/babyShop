@@ -10,6 +10,7 @@ import {
 import { formatMoney } from "../others/formatMoney";
 
 export default function ProductCart({ data }) {
+  console.log(13, data.color, data.age, data.height);
   const dispatch = useDispatch();
   const [totalPrice, setTotalPrice] = useState(data.quantity * data.priceSale);
   const update = () => {
@@ -21,14 +22,15 @@ export default function ProductCart({ data }) {
   }, [data.priceSale, data?.color, data.quantity]);
 
   const removeProduct = () => {
-    dispatch(removeItem({ color: data?.color }));
+    dispatch(
+      removeItem({ color: data.color, age: data.age, height: data.height })
+    );
   };
 
   const handleAddNumber = (data) => {
     dispatch(
       addToCart({
         ...data,
-        id: 1,
         quantity: 1,
       })
     );
@@ -37,7 +39,6 @@ export default function ProductCart({ data }) {
     dispatch(
       addToCart({
         ...data,
-        id: 2,
         quantity: -1,
       })
     );

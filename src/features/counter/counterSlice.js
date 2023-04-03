@@ -23,7 +23,10 @@ export const counterSlice = createSlice({
     },
     addToCart: (state, actions) => {
       const check = state.listCart.findIndex(
-        (item) => item.color === actions.payload.color
+        (item) =>
+          item.color === actions.payload.color &&
+          item.age === actions.payload.age &&
+          item.height === actions.payload.height
       );
       if (check !== -1) {
         state.listCart[check].quantity += actions.payload.quantity;
@@ -41,7 +44,10 @@ export const counterSlice = createSlice({
     },
     updateQuantity: (state, actions) => {
       const check = state.listCart.findIndex(
-        (item) => item.color === actions.payload.color
+        (item) =>
+          item.color === actions.payload.color &&
+          item.age === actions.payload.age &&
+          item.height === actions.payload.height
       );
       if (check !== -1) {
         state.listCart[check].quantity = actions.payload.quantity;
@@ -57,7 +63,10 @@ export const counterSlice = createSlice({
     },
     removeItem(state, actions) {
       state.listCart = state.listCart.filter(
-        (item) => item.color !== actions.payload.color
+        (item) =>
+          item.color !== actions.payload.color ||
+          item.age !== actions.payload.age ||
+          item.height !== actions.payload.height
       );
       state.total = state.listCart.reduce(
         (sum, item) => sum + +item?.priceSale * item?.quantity,
