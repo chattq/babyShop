@@ -132,7 +132,7 @@ export default function ProductInfor() {
                   {" "}
                   Choose an option
                 </option>
-                {data?.age.map((value, index) => (
+                {dataLocal?.age.map((value, index) => (
                   <option value={value} key={index}>
                     {value}
                   </option>

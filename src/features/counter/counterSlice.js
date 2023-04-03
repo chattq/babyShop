@@ -22,9 +22,11 @@ export const counterSlice = createSlice({
       state.product = actions.payload;
     },
     addToCart: (state, actions) => {
-      const check = state.listCart.findIndex(
-        (item) => item.color === actions.payload.color
-      );
+      const check = state.listCart.findIndex((item) => {
+        if (item.color && item.height && item.age) {
+          item.color === actions.payload.color;
+        }
+      });
       if (check !== -1) {
         state.listCart[check].quantity += actions.payload.quantity;
       } else {
