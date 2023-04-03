@@ -157,8 +157,8 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-[100px]">
-            <div className="flex gap-6 flex-wrap w-[90%] m-auto justify-center">
-              <div className="flex">
+            <div className="flex flex-wrap w-[90%] m-auto justify-center">
+              <div className="flex service">
                 <div className="px-[90px] text-[20px] py-[20px] bed_sets relative">
                   Bed Sets
                 </div>
@@ -172,7 +172,7 @@ export default function Home() {
                   Nighties
                 </div>
               </div>
-              <div className="flex">
+              <div className="flex service">
                 <div className="px-[90px] text-[20px] py-[20px] Bathrobes relative">
                   Bathrobes
                 </div>

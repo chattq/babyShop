@@ -32,17 +32,17 @@ export default function Footer() {
           <div className="footer_service">
             <h5 className="text-[20px]">Useful links</h5>
             <ul className="mt-7">
-              <li className="mb-1">Contact us</li>
-              <li className="mb-1">Help & About us</li>
-              <li className="mb-1">Shipping & Returns</li>
+              <li className="mb-1 cursor-pointer">Contact us</li>
+              <li className="mb-1 cursor-pointer">Help & About us</li>
+              <li className="mb-1 cursor-pointer">Shipping & Returns</li>
               <li>Refund Policy</li>
             </ul>
           </div>
           <div className="mt-6 footer_service">
             <h5 className="text-[20px]">Delivery</h5>
             <ul className="mt-7">
-              <li className="mb-1">How it Works</li>
-              <li className="mb-1">Free Delivery</li>
+              <li className="mb-1 cursor-pointer">How it Works</li>
+              <li className="mb-1 cursor-pointer">Free Delivery</li>
               <li>FAQ</li>
             </ul>
           </div>
@@ -50,19 +50,23 @@ export default function Footer() {
         <div className="footer_service footer_service_box">
           <h5 className="text-[20px]">Customer service</h5>
           <ul className="mt-7">
-            <li className="mb-1">Orders</li>
-            <li className="mb-1">Downloads</li>
-            <li className="mb-1">Addresses</li>
-            <li className="mb-1">Account details</li>
+            <li className="mb-1 cursor-pointer">Orders</li>
+            <li className="mb-1 cursor-pointer">Downloads</li>
+            <li className="mb-1 cursor-pointer">Addresses</li>
+            <li className="mb-1 cursor-pointer">Account details</li>
             <li>Lost passwords</li>
           </ul>
         </div>
         <div className="footer_service_box">
           <div className="footer_service">
-            <h5 className="text-[20px]">Need help?</h5>
+            <h5 className="text-[20px] cursor-pointer">Need help?</h5>
             <ul className="mt-7">
-              <li className="mb-1 text-[18px]">+61 (0) 383 766 284</li>
-              <li className="mb-1 text-[18px]">+61 (0) 383 766 284</li>
+              <li className="mb-1 text-[18px] cursor-pointer">
+                +61 (0) 383 766 284
+              </li>
+              <li className="mb-1 text-[18px] cursor-pointer">
+                +61 (0) 383 766 284
+              </li>
             </ul>
           </div>
           <div className="mt-[40px] footer_service">
@@ -78,14 +82,16 @@ export default function Footer() {
       <div className="border-t-[1px] border-[rgba(0,0,0,.08)]">
         <div className="w-[80%] footer_last_box m-auto ">
           <div className="flex justify-between footer_last items-center h-[70px]">
-            <div className="footer_last_text">
+            <div className="footer_last_text ">
               © 2023 Betheme by Muffin group | All Rights Reserved | Powered by
               WordPress
             </div>
             <ul className="flex">
-              <li>Terms and conditions</li>
-              <li className="footer_copy_center">Privacy policy</li>
-              <li>Cookies</li>
+              <li className="cursor-pointer">Terms and conditions</li>
+              <li className="footer_copy_center ml-1 cursor-pointer">
+                Privacy policy
+              </li>
+              <li className="cursor-pointer ml-2">Cookies</li>
             </ul>
           </div>
         </div>

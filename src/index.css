@@ -279,6 +279,10 @@
     .home_header_select {
       width: 100%;
     }
+    .service {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
     .home_carousel_header .slick-dots.slick-dots-bottom {
       bottom: 23px !important;
     }
