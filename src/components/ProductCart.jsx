@@ -10,7 +10,6 @@ import {
 import { formatMoney } from "../others/formatMoney";
 
 export default function ProductCart({ data }) {
-  console.log(13, data.color, data.age, data.height);
   const dispatch = useDispatch();
   const [totalPrice, setTotalPrice] = useState(data.quantity * data.priceSale);
   const update = () => {
@@ -43,7 +42,9 @@ export default function ProductCart({ data }) {
       })
     );
     if (data.quantity <= 1) {
-      dispatch(removeItem({ color: data?.color }));
+      dispatch(
+        removeItem({ color: data.color, age: data.age, height: data.height })
+      );
     }
   };
   return (
