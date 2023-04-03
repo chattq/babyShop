@@ -646,6 +646,12 @@
     width: 80%;
   }
 }
+@media only screen and (max-width: 1286px) {
+  .header_logo_container,
+  .header_nav_res {
+    width: 90%;
+  }
+}
 
 * {
   margin: 0;
