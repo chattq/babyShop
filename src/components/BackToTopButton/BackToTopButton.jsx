@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-export default function BackToTopButton({ children, checkGPS }) {
+export default function BackToTopButton({ children }) {
   const [backToTopButton, setBackToTopButton] = useState(false);
 
   useEffect(() => {

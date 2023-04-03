@@ -26,6 +26,7 @@ import { Carousel } from "antd";
 import ProductSales from "../../components/ProductSales";
 import ModalInforProduct from "../../components/Modal/ModalInforProduct";
 import ImageChangeHover from "../../components/ChangeImg/ImageChangeHover";
+import BackToTopButton from "../../components/BackToTopButton/BackToTopButton";
 
 export default function Home() {
   const [product, setProduct] = useState(dataProduct);
@@ -211,26 +212,30 @@ export default function Home() {
               product.map((item) => (
                 <div className="w-[20%] home_cart" key={item.id}>
                   <div className="card_home relative">
-                    <Link
-                      onClick={() => handleProductDetail(item)}
-                      to={"productInfor"}>
-                      <ImageChangeHover
-                        primaryImg={item.imageMain}
-                        secondaryImg={item.image[1]}
-                        alt=""
-                      />
-                    </Link>
-
-                    <div className="card_home_nav text-black px-6 flex items-center justify-between overflow-hidden">
+                    <BackToTopButton>
                       <Link
                         onClick={() => handleProductDetail(item)}
-                        to={"productInfor"}
-                        className="hover:text-[#ebc989]">
-                        <FontAwesomeIcon
-                          icon={faLink}
-                          style={{ fontSize: "20px" }}
+                        to={"productInfor"}>
+                        <ImageChangeHover
+                          primaryImg={item.imageMain}
+                          secondaryImg={item.image[1]}
+                          alt=""
                         />
                       </Link>
+                    </BackToTopButton>
+
+                    <div className="card_home_nav text-black px-6 flex items-center justify-between overflow-hidden">
+                      <BackToTopButton>
+                        <Link
+                          onClick={() => handleProductDetail(item)}
+                          to={"productInfor"}
+                          className="hover:text-[#ebc989]">
+                          <FontAwesomeIcon
+                            icon={faLink}
+                            style={{ fontSize: "20px" }}
+                          />
+                        </Link>
+                      </BackToTopButton>
                       {item.like ? (
                         <div
                           className="hover:text-[#ebc989] cursor-pointer"
