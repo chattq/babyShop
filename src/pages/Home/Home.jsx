@@ -557,7 +557,7 @@ export default function Home() {
                     />
                     October 11, 2021
                   </p>
-                  <p className="text-gray-200 home_introduce_text_des text-[30px] my-1">
+                  <p className="text-white home_introduce_text_des text-[30px] my-1">
                     Tempor diam pede cursus vitae
                   </p>
                 </div>
@@ -589,7 +589,7 @@ export default function Home() {
                       />
                       October 11, 2021
                     </p>
-                    <p className="text-gray-200 text-[20px] home_introduce_text_des my-1">
+                    <p className="text-white text-[20px] home_introduce_text_des my-1">
                       Mauris nec malesuada fames ac turpis velit
                     </p>
                   </div>
@@ -604,10 +604,14 @@ export default function Home() {
                 />
                 <div className="absolute pt-3 home_introduce_text w-full bottom-0 px-6 pb-6">
                   <div>
-                    <p className="text-gray-200">
+                    <p className="text-white">
                       <FontAwesomeIcon
                         icon={faUser}
-                        style={{ marginLeft: "6px", marginRight: "6px" }}
+                        style={{
+                          marginLeft: "6px",
+                          marginRight: "6px",
+                          color: "white",
+                        }}
                       />
                       <Link to={"/"} className="cursor-pointer hover:underline">
                         Muffin Group{" "}
@@ -619,7 +623,7 @@ export default function Home() {
                       />
                       October 11, 2021
                     </p>
-                    <p className="text-gray-200 text-[20px] home_introduce_text_des my-1">
+                    <p className="text-white text-[20px] home_introduce_text_des my-1">
                       Utin laoreet sapien eu amet lorem kebab
                     </p>
                   </div>
