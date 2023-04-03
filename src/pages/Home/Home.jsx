@@ -173,7 +173,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex">
-                <div className="px-[90px] text-[20px] py-[20px] Bathrobes relative left-[10px]">
+                <div className="px-[90px] text-[20px] py-[20px] Bathrobes relative">
                   Bathrobes
                 </div>
                 <div className="px-[90px] text-[20px] py-[20px] Classic relative left-[10px]">
