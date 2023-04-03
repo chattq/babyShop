@@ -8,7 +8,7 @@ import Header from "../Header/Header";
 
 export default function LayoutPage({ children }) {
   return (
-    <div className="pb-[600px] LayoutPage">
+    <div className="mb-[600px] LayoutPage">
       <Header />
       {children}
       <Footer />
