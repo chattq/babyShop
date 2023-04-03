@@ -35,6 +35,7 @@ export default function ProductInfor() {
   const [checkColor, setCheckColor] = useState();
   const [checkHeight, setCheckHeight] = useState();
   const [checkSelect, setCheckSelect] = useState();
+  const [checkDisable, setCheckDisable] = useState(true);
   const dispatch = useDispatch();
   const [quantity1, setQuantity] = useState(1);
   const sentDataCart = (item) => {
@@ -49,9 +50,6 @@ export default function ProductInfor() {
     );
     setQuantity(1);
     toast.success("Mua hàng thành công");
-    // setTimeout(() => {
-    //   nav("/");
-    // }, 2000);
   };
   const handleChangeImg = (img) => {
     setImage(img);
@@ -61,6 +59,10 @@ export default function ProductInfor() {
   };
   const handleHeight = (value) => {
     setCheckHeight(value);
+  };
+  const handleDisablie = (e) => {
+    setCheckSelect(e.target.value);
+    setCheckDisable(false);
   };
   const scrollToElement = useRef(null);
   const goToElement = () => {
@@ -125,10 +127,15 @@ export default function ProductInfor() {
               <div className="font-semibold mr-[60px]">Age</div>
               <select
                 className="w-[220px] bg-[aliceblue] rounded-md"
-                onChange={(e) => setCheckSelect(e.target.value)}>
-                <option disabled> Choose an option</option>
-                {dataLocal?.age.map((value, index) => (
-                  <option value={value}>{value}</option>
+                onChange={(e) => handleDisablie(e)}>
+                <option disabled={!checkDisable ? true : false}>
+                  {" "}
+                  Choose an option
+                </option>
+                {data?.age.map((value, index) => (
+                  <option value={value} key={index}>
+                    {value}
+                  </option>
                 ))}
               </select>
             </div>
