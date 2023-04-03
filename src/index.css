@@ -261,6 +261,12 @@
     .home_box {
       margin-bottom: 0;
     }
+    .Bathrobes,
+    .Classic,
+    .Fancy,
+    .More_products {
+      left: 0;
+    }
     .home_carousel_header {
       flex-direction: column;
     }

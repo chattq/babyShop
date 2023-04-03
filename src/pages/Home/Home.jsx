@@ -170,16 +170,16 @@ export default function Home() {
               <div className="px-[100px] text-[20px] py-[20px] Nighties relative">
                 Nighties
               </div>
-              <div className="px-[100px] text-[20px] py-[20px] Bathrobes relative">
+              <div className="px-[100px] text-[20px] py-[20px] Bathrobes relative left-[10px]">
                 Bathrobes
               </div>
-              <div className="px-[100px] text-[20px] py-[20px] Classic relative">
+              <div className="px-[100px] text-[20px] py-[20px] Classic relative left-[10px]">
                 Classic
               </div>
-              <div className="px-[100px] text-[20px] py-[20px] Fancy relative">
+              <div className="px-[100px] text-[20px] py-[20px] Fancy relative left-[38px]">
                 Fancy
               </div>
-              <div className="px-[100px] text-[20px] py-[20px] text-center  More_products relative">
+              <div className="px-[100px] text-[20px] py-[20px] text-center  More_products relative left-[25px]">
                 More products
               </div>
             </div>
