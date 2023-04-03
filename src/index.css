@@ -632,6 +632,17 @@
     }
   }
 }
+
+@media only screen and (max-width: 1600px) {
+  .header_hover,
+  .nav_active {
+    margin-right: 15px;
+  }
+  .header_icon_res li {
+    margin-right: 28px;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
