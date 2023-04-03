@@ -157,7 +157,7 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-[100px]">
-            <div className="flex gap-6 w-[90%] m-auto flex-wrap justify-center">
+            <div className="flex gap-6 flex-wrap w-[90%] m-auto justify-center">
               <div className="px-[90px] text-[20px] py-[20px] bed_sets relative">
                 Bed Sets
               </div>
@@ -179,7 +179,7 @@ export default function Home() {
               <div className="px-[90px] text-[20px] py-[20px] Fancy relative left-[38px]">
                 Fancy
               </div>
-              <div className="px-[90px] text-[20px] py-[20px] text-center  More_products relative left-[25px]">
+              <div className="px-[90px] text-[20px] py-[20px] text-center More_products relative left-[25px]">
                 More products
               </div>
             </div>
