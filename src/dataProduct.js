@@ -11,11 +11,11 @@ export const dataProduct = [
     ],
     material: "Composition: Main material: 95% Cotton, 5% Polyester",
     imageMain:
-      "https://themes.muffingroup.com/be/babyshop/wp-content/uploads/2021/10/babyshop-product1b.webp",
+      "https://themes.muffingroup.com/be/babyshop/wp-content/uploads/2021/10/babyshop-product1a.webp",
     image: [
+      "https://themes.muffingroup.com/be/babyshop/wp-content/uploads/2021/10/babyshop-product1a.webp",
       "https://themes.muffingroup.com/be/babyshop/wp-content/uploads/2021/10/babyshop-product1c.webp",
       "https://themes.muffingroup.com/be/babyshop/wp-content/uploads/2021/10/babyshop-product1b.webp",
-      "https://themes.muffingroup.com/be/babyshop/wp-content/uploads/2021/10/babyshop-product1a.webp",
     ],
     color: ["#3a6380", "#773d49", "#bc2a32", "#edc582"],
     tag: ["Duvet cover", "kids", "Recyclable"],
@@ -102,8 +102,8 @@ export const dataProduct = [
     imageMain:
       "https://themes.muffingroup.com/be/babyshop/wp-content/uploads/2021/10/babyshop-product2a.webp",
     image: [
-      "https://themes.muffingroup.com/be/babyshop/wp-content/uploads/2021/10/babyshop-product2b.webp",
       "https://themes.muffingroup.com/be/babyshop/wp-content/uploads/2021/10/babyshop-product2a.webp",
+      "https://themes.muffingroup.com/be/babyshop/wp-content/uploads/2021/10/babyshop-product2b.webp",
       "https://themes.muffingroup.com/be/babyshop/wp-content/uploads/2021/10/babyshop-product2c.webp",
     ],
     color: ["blue", "brown", "red", "yellow"],
