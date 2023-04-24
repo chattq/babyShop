@@ -649,7 +649,8 @@
 @media only screen and (max-width: 1286px) {
   .header_logo_container,
   .header_nav_res {
-    width: 90%;
+    width: 100%;
+    padding-right: 26px;
   }
 }
 
