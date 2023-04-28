@@ -274,7 +274,6 @@ export default function Home() {
                     <Link to={"productInfor"}>
                       <p className="text-center">{item.name}</p>
                     </Link>
-                    <p></p>
                     <div className="flex justify-center gap-1 ">
                       {item.color.map((value, index) => (
                         <div
