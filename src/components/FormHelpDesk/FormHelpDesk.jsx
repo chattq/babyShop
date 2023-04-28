@@ -26,7 +26,7 @@ export default function FormHelpDesk({ chidren, hideDrop }) {
       {open ? (
         <div
           ref={menuRef}
-          className="bg-[#fbfbfb] rounded-md fixed top-0 right-[20px] shadow w-[300px] px-6">
+          className="bg-[#fbfbfb] rounded-md fixed top-[60px] right-[20px] shadow w-[300px] px-6">
           <div>
             <h1 className="text-center text-[28px] mt-2 mb-2">Helpdesk</h1>
             <p className="text-center leading-7">
